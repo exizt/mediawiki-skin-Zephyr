@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"..."
+		]
+	},
+	"skinname-euboea": "{{optional}}",
+	"euboea-desc": "{{desc|what=skin|name=Euboea|url=https://www.mediawiki.org/wiki/Skin:Euboea}}",
+	"euboea-no-categories": "Message to show when no categories available"
+}

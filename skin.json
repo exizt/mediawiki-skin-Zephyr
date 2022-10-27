@@ -1,0 +1,84 @@
+{
+	"name": "Euboea",
+	"version": "1.0.0",
+	"author": [
+		"[https://skins.wmflabs.org skins.wmflabs.org v.2.0]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Skin:Euboea",
+	"descriptionmsg": "euboea-skin-desc",
+	"namemsg": "skinname-euboea",
+	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.38.0"
+	},
+	"ValidSkinNames": {
+		"euboea": {
+			"class": "SkinMustache",
+			"args": [
+				{
+					"name": "euboea",
+					"responsive": true,
+					"toc": false,
+					"messages": [
+						"euboea-no-categories",
+						"sitetitle",
+						"search",
+						"otherlanguages",
+						"tagline"
+					],
+					"styles": [
+						"mediawiki.ui.icon",
+						"mediawiki.ui.button",
+						"skins.euboea.styles"
+					],
+					"scripts": [
+						"skins.euboea"
+					]
+				}
+			]
+		}
+	},
+	"MessagesDirs": {
+		"Euboea": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.euboea.styles": {
+			"class": "ResourceLoaderSkinModule",
+			"features": {
+				"normalize": true,
+				"elements": true,
+				"content-tables": true,
+				"content-links": true,
+				"content-media": true,
+				"content-links-external": false,
+				"interface-message-box": true,
+				"interface-category": true,
+				"toc": true
+			},
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"styles": [
+				"resources/skin.less"
+			]
+		},
+		"skins.euboea": {
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"packageFiles": [
+				"resources/skin.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Euboea"
+	},
+	"ResourceModuleSkinStyles": {},
+	"manifest_version": 2
+}
