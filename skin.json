@@ -1,26 +1,26 @@
 {
-	"name": "Euboea",
+	"name": "Zephyr",
 	"version": "1.0.0",
 	"author": [
 		"[https://skins.wmflabs.org skins.wmflabs.org v.2.0]"
 	],
-	"url": "https://www.mediawiki.org/wiki/Skin:Euboea",
-	"descriptionmsg": "euboea-skin-desc",
-	"namemsg": "skinname-euboea",
+	"url": "https://www.mediawiki.org/wiki/Skin:Zephyr",
+	"descriptionmsg": "zephyr-skin-desc",
+	"namemsg": "skinname-zephyr",
 	"type": "skin",
 	"requires": {
 		"MediaWiki": ">= 1.38.0"
 	},
 	"ValidSkinNames": {
-		"euboea": {
+		"zephyr": {
 			"class": "SkinMustache",
 			"args": [
 				{
-					"name": "euboea",
+					"name": "zephyr",
 					"responsive": true,
 					"toc": false,
 					"messages": [
-						"euboea-no-categories",
+						"zephyr-no-categories",
 						"sitetitle",
 						"search",
 						"otherlanguages",
@@ -29,22 +29,22 @@
 					"styles": [
 						"mediawiki.ui.icon",
 						"mediawiki.ui.button",
-						"skins.euboea.styles"
+						"skins.zephyr.styles"
 					],
 					"scripts": [
-						"skins.euboea"
+						"skins.zephyr"
 					]
 				}
 			]
 		}
 	},
 	"MessagesDirs": {
-		"Euboea": [
+		"Zephyr": [
 			"i18n"
 		]
 	},
 	"ResourceModules": {
-		"skins.euboea.styles": {
+		"skins.zephyr.styles": {
 			"class": "ResourceLoaderSkinModule",
 			"features": {
 				"normalize": true,
@@ -65,7 +65,7 @@
 				"resources/skin.less"
 			]
 		},
-		"skins.euboea": {
+		"skins.zephyr": {
 			"targets": [
 				"desktop",
 				"mobile"
@@ -77,7 +77,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "Euboea"
+		"remoteSkinPath": "Zephyr"
 	},
 	"ResourceModuleSkinStyles": {},
 	"manifest_version": 2
