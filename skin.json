@@ -2,10 +2,10 @@
 	"name": "Zephyr",
 	"version": "1.0.0",
 	"author": [
-		"[https://skins.wmflabs.org skins.wmflabs.org v.2.0]"
+		"[https://github.com/exizt exizt]"
 	],
 	"url": "https://www.mediawiki.org/wiki/Skin:Zephyr",
-	"descriptionmsg": "zephyr-skin-desc",
+	"descriptionmsg": "zephyr-desc",
 	"namemsg": "skinname-zephyr",
 	"type": "skin",
 	"requires": {
