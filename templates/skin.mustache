@@ -11,15 +11,16 @@
 {{>Notices}}
 <main id="content" class="mw-body zpr-container">
 	<header class="content__header">
-		{{>ContentIndicators}}
-		{{>ContentHeading}}
+		{{>content/ContentIndicators}}
+		{{>content/ContentHeading}}
 		{{>ContentNamespaces}}
-		{{>ContentActions}}
+		{{>content/ContentActions}}
 	</header>
 	{{>ContentBody}}
 	{{#data-toc}}{{>TableOfContents}}{{/data-toc}}
 </main>
-{{>partials/Sidebar}}
+<hr class="zpr-bottomline">
+{{>sidebar/Sidebar}}
 <nav>
 	{{>Languages}}
 </nav>

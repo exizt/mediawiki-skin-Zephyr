@@ -1,12 +1,21 @@
 @import 'mediawiki.skin.variables';
 @import 'variables.less';
 
-.mw-footer {
-	border-top: solid 20px @background-color-base;
-	padding: 20px 0;
-
-	li {
-		display: inline-block;
-		margin-right: 20px;
+#zpr_footer {
+	
+	&.mw-footer {
+		padding: 20px 0;
+		
+		li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+	ul {
+		margin: 0;
+	}
+	#footer-places {
+		margin-top : 1em;
 	}
 }
+

@@ -1,0 +1,6 @@
+<nav id="zpr_sidebar" class="zpr-container">
+	{{#data-portlets-sidebar}}
+	{{#data-portlets-first}}{{>sidebar/Sidebar_Portlet}}{{/data-portlets-first}}
+	{{#array-portlets-rest}}{{>sidebar/Sidebar_Portlet}}{{/array-portlets-rest}}
+	{{/data-portlets-sidebar}}
+</nav>
