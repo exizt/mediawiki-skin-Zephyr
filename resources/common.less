@@ -9,8 +9,8 @@ html {
 
 body {
 	background: @background-color-article;
-	max-width: 800px;
-	margin: 0 auto;
+	/*max-width: 800px;
+	margin: 0 auto;*/
 	font-family: @font-family;
 
 	> header,
@@ -19,6 +19,15 @@ body {
 	> footer {
 		padding: 1em;
 	}
+}
+
+.zpr-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+#header {
+	border-bottom: 1px solid silver;
 }
 
 body,
@@ -40,16 +49,13 @@ a {
 }
 
 /** HEADER */
-
 .mw-header {
 	min-height: 50px;
-	margin: 0 10px 8px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	position: relative;
 	z-index: 3;
-	padding-left: 50px;
 
 	@media ( max-width: @width-breakpoint-tablet ) {
 		padding: 1em 8px;
