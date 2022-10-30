@@ -21,11 +21,6 @@ body {
 	}
 }
 
-.zpr-container {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
 #header {
 	border-bottom: 1px solid silver;
 }
@@ -137,4 +132,39 @@ div.thumbinner {
 		color: @color-thumb;
 	}
 }
+
+
+/* main layout */
+.zpr-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.zpr-content-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+}
+
+main {
+	flex: 1;
+	order: 2;
+	padding:0.5em;
+}
+  
+#toc-sticky {
+	flex: 0 0 200px;
+	order: 3;
+}
+
+
+/* tablet */
+@media screen and (max-width: 900px) {
+  }
+  
+  /* mobile */
+  @media screen and (max-width: 600px) {
+	
+  }
 

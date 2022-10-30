@@ -9,18 +9,21 @@
 	</div>
 </header>
 {{>Notices}}
-<main id="content" class="mw-body zpr-container">
-	<header class="content__header">
-		{{>content/ContentIndicators}}
-		{{>content/ContentHeading}}
-		{{>ContentNamespaces}}
-		{{>content/ContentActions}}
-	</header>
-	{{>ContentBody}}
+<div class="zpr-content-wrapper zpr-container">
+	<main id="content" class="mw-body">
+		<header class="content__header">
+			{{>content/ContentIndicators}}
+			{{>content/ContentHeading}}
+			{{^is-anon}}
+			{{>content/ContentActions}}
+			{{/is-anon}}
+		</header>
+		{{>ContentBody}}
+	</main>
+	{{>sidebar/Sidebar}}
 	{{#data-toc}}{{>TableOfContents}}{{/data-toc}}
-</main>
+</div>
 <hr class="zpr-bottomline">
-{{>sidebar/Sidebar}}
 <nav>
 	{{>Languages}}
 </nav>

@@ -2,23 +2,23 @@
 @import 'variables.less';
 
 #toc-sticky {
-	position: fixed;
+	display: none;
+	position: sticky;
+	align-self: flex-start; /* sticky를 위해 필요 */
 	padding: 8px;
 	top: 0;
-	right: 0;
-	display: none;
 	width: 300px;
 	height: 50vh;
 	overflow: hidden;
 	flex-direction: column;
 
 	> div {
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 
 	h1 {
 		text-transform: uppercase;
-		height: 50px;
+		/*height: 50px;*/
 		font-size: 1em;
 		cursor: pointer;
 		background: @background-color-article;
@@ -46,7 +46,16 @@
 		background: @background-color-article;
 	}
 
-	@media ( min-width: @width-breakpoint-desktop ) {
+	li {
+		list-style-type: none;
+	}
+
+	@media ( min-width: @width-breakpoint-tablet ) {
 		display: flex;
+	}
+}
+@media ( min-width: @width-breakpoint-tablet ) {
+	.toc {
+		display:none !important;
 	}
 }

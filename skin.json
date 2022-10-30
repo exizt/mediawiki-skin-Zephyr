@@ -18,7 +18,7 @@
 				{
 					"name": "zephyr",
 					"responsive": true,
-					"toc": false,
+					"toc": true,
 					"messages": [
 						"zephyr-no-categories",
 						"sitetitle",
