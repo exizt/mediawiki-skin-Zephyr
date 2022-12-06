@@ -18,7 +18,9 @@
 			{{>content/ContentActions}}
 			{{/is-anon}}
 		</header>
+		<div id="bodyContent" data-mw-ve-target-container>
 		{{>content/ContentBody}}
+		</div>
 	</main>
 	{{>sidebar/Sidebar}}
 	{{#data-toc}}{{>TableOfContents}}{{/data-toc}}
