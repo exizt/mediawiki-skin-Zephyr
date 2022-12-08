@@ -1,8 +1,10 @@
 <li>
-    {{number}}.{{index}} <a href="#{{anchor}}">{{line}}</a>
+    {{number}} <a href="#{{anchor}}">{{line}}</a>
+    {{#array-sections.0}}
     <ul>
     {{#array-sections}}
     {{>TableOfContents__line}}
     {{/array-sections}}
     </ul>
+    {{/array-sections.0}}
 </li>
