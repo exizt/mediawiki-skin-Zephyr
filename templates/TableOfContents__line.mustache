@@ -1,10 +1,10 @@
 <li>
     {{number}} <a href="#{{anchor}}">{{line}}</a>
-    {{#array-sections.0}}
+    {{#is-parent-section}}
     <ul>
     {{#array-sections}}
     {{>TableOfContents__line}}
     {{/array-sections}}
     </ul>
-    {{/array-sections.0}}
+    {{/is-parent-section}}
 </li>
