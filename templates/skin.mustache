@@ -13,10 +13,14 @@
 	<main id="content" class="mw-body">
 		<header class="content__header">
 			{{>content/ContentIndicators}}
-			{{>content/ContentHeading}}
-			{{^is-anon}}
-			{{>content/ContentActions}}
-			{{/is-anon}}
+			<div class="zpr-content-header">
+				{{>content/ContentHeading}}
+				{{^is-anon}}
+				<div class="zpr-header-actions">
+					{{>content/ContentActions2}}
+				</div>
+				{{/is-anon}}
+			</div>
 		</header>
 		<div id="bodyContent" data-mw-ve-target-container>
 		{{>content/ContentBody}}

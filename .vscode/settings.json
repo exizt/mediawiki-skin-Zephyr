@@ -13,6 +13,7 @@
         "skinname",
         "thumbimage",
         "thumbinner",
+        "viewactions",
         "toctogglelabel"
     ]
 }

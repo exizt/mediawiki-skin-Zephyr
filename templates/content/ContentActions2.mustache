@@ -1,0 +1,13 @@
+<div class="content__actions">
+  {{>Dropdown}}
+  <div role="navigation" id="ca-viewactions" class="mw-portlet mw-portlet-viewactions" aria-labelledby="p-viewactions-label">
+    <input type="checkbox" aria-labelledby="p-viewactions-label" />
+    <h3 id="p-viewactions-label">Actions</h3>
+    <div class="mw-portlet-body">
+      <ul>
+        {{{data-portlets.data-views.html-items}}}
+        {{{data-portlets.data-actions.html-items}}}
+      </ul>
+    </div>
+  </div>
+</div>
