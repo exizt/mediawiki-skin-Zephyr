@@ -1,14 +1,14 @@
 <header id="header">
 	<div class="zpr-container">
 		<div class="mw-header">
-			{{>Logo}}
-			{{>Notifications}}
-			{{>Dropdown}}{{>PersonalMenu}}
-			{{>Search}}
+			{{>el/Logo}}
+			{{>el/Notifications}}
+			{{>el/PersonalMenu}}
+			{{>el/Search}}
 		</div>
 	</div>
 </header>
-{{>Notices}}
+{{>el/Notices}}
 <div class="zpr-content-wrapper zpr-container">
 	<main id="content" class="mw-body">
 		<header class="content__header">
@@ -21,16 +21,17 @@
 				</div>
 				{{/is-anon}}
 			</div>
+			{{>content/ContentTagline}}
 		</header>
 		<div id="bodyContent" data-mw-ve-target-container>
 		{{>content/ContentBody}}
 		</div>
 	</main>
 	{{>sidebar/Sidebar}}
-	{{#data-toc}}{{>TableOfContents}}{{/data-toc}}
+	{{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
 </div>
 <hr class="zpr-bottomline">
 <nav>
-	{{>Languages}}
+	{{>el/Languages}}
 </nav>
-{{>Footer}}
+{{>footer/Footer}}
