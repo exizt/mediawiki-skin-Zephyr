@@ -1,0 +1,47 @@
+/* 전체 레이아웃 관련 */
+/** ResourceLoaderSkinModule: normalize,elements,content-tables,content-links,content-media,interface-message-box,interface-category,toc */
+
+html {
+    margin: 0;
+    /*padding: 0 0 20px;*/
+    padding: 0;
+}
+
+/* main layout */
+/* width 등의 설정 */
+.zpr-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 메인 영역 */
+.zpr-content-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+    align-items: stretch;
+}
+
+/* 컨텐츠가 나타나는 영역 */
+main.mw-body {
+    flex: 1;
+    order: 2;
+    padding:0.5em;
+    width: 100%;
+}
+
+/* 사이드바의 영역 */
+nav#zpr_sidebar {
+    /* 모바일 상태 */
+	order: 4;
+	border-top: 1px solid silver;
+	/*padding: 1em;*/
+	
+    /* 데스크톱 모드 */
+	@media ( min-width: @width-breakpoint-desktop ) {
+		order: 1;
+		border: 0;
+		margin: 1em 0;
+	}
+}
