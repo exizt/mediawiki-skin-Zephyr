@@ -2,19 +2,23 @@
 @import 'variables.less';
 
 /* 글제목 + actions 영역 */
-.zpr-content-header {
+.zp-content-header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	/*align-items: center;*/
+	align-items: end;
 	border-bottom: 1px solid #a2a9b1;
 	margin-bottom:0.6em;
-	h1 {
+	h1.mw-first-heading {
 		flex-grow: 1;
 		margin-bottom: 0;
 		border:0;
+		padding: 0;
+		/*font-size: 1.95rem;*/
 	}
-	.zpr-header-actions {
-		
-
+	.zp-header-actions {
+		.mw-portlet-viewactions h3 {
+			height: 2em;
+		}
 	}
 }
