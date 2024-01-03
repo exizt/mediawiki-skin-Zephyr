@@ -1,37 +1,28 @@
 <header id="header">
-	<div class="zpr-container">
-		<div class="mw-header">
-			{{>el/Logo}}
-			{{>el/Notifications}}
-			{{>el/PersonalMenu}}
-			{{>el/Search}}
-		</div>
-	</div>
+  <div class="zpr-container">
+    <div class="mw-header">
+      {{>el/Logo}}
+      {{>el/Notifications}}
+      {{>el/PersonalMenu}}
+      {{>el/Search}}
+    </div>
+  </div>
 </header>
 {{>el/Notices}}
 <div class="zpr-content-wrapper zpr-container">
-	<main id="content" class="mw-body">
-		<header class="content__header">
-			{{>content/ContentIndicators}}
-			<div class="zp-content-header">
-				{{>content/ContentHeading}}
-				{{^is-anon}}
-				<div class="zp-header-actions">
-					{{>content/ContentActions2}}
-				</div>
-				{{/is-anon}}
-			</div>
-			{{>content/ContentTagline}}
-		</header>
-		<div id="bodyContent" data-mw-ve-target-container>
-		{{>content/ContentBody}}
-		</div>
-	</main>
-	{{>sidebar/Sidebar}}
-	{{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
+  <main id="content" class="mw-body">
+    <header class="content__header">
+      {{>content_header}}
+    </header>
+    <div id="bodyContent" data-mw-ve-target-container>
+      {{>content/ContentBody}}
+    </div>
+  </main>
+  {{>sidebar/Sidebar}}
+  {{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
 </div>
 <hr class="zpr-bottomline">
 <nav>
-	{{>el/Languages}}
+  {{>el/Languages}}
 </nav>
 {{>footer/Footer}}
