@@ -1,5 +1,7 @@
 <div class="zp-content-header">
     {{>content_header/ContentHeading}}
+    {{>content_header/ContentIndicators}}
+    {{^is-specialpage}}
     <div class="zch-sub-line">
         <div>
           {{>content_header/ContentTagline}}
@@ -11,7 +13,6 @@
                 {{/is-anon}}
             </div>
             <div>
-                {{>content_header/ContentIndicators}}
                 {{^is-anon}}
                 <div class="zp-header-actions">
                     {{>content_header/ContentActions2}}
@@ -20,4 +21,5 @@
             </div>
         </div>
     </div>
+    {{/is-specialpage}}
 </div>
