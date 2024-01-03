@@ -3,17 +3,20 @@
         "catlinks",
         "descriptionmsg",
         "editsection",
+        "enhancedchanges",
         "labelledby",
         "messagebox",
         "namemsg",
         "otherlanguages",
         "Portlet",
         "portlets",
+        "recentchanges",
         "sitetitle",
         "skinname",
         "thumbimage",
         "thumbinner",
-        "viewactions",
-        "toctogglelabel"
+        "toctogglelabel",
+        "vform",
+        "viewactions"
     ]
 }
