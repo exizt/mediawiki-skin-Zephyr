@@ -1,0 +1,21 @@
+@import 'mediawiki.skin.variables';
+@import 'variables.less';
+
+/* 특수 문서 등 기본 UI 부분 fix */
+body.ns-special {
+    /* 특수 문서의 input의 글자 크기 14px-> 16px로 조정 */
+    .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+        font-size: 16px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        height: 2em;
+    }
+
+    /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
+    .mw-version-ext-authors {
+        width: 150px;
+    }
+    .mw-body-content > h2, .mw-spcontent > h2 {
+        margin-top: 1em;
+    }
+}
