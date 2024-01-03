@@ -1,10 +1,23 @@
-{{>content_header/ContentIndicators}}
 <div class="zp-content-header">
     {{>content_header/ContentHeading}}
-    {{^is-anon}}
-    <div class="zp-header-actions">
-        {{>content_header/ContentActions2}}
+    <div class="zch-sub-line">
+        <div>
+          {{>content_header/ContentTagline}}
+        </div>
+        <div class="zch-actions">
+            <div class="zch-action-watch">
+                {{^is-anon}}
+                {{{html-action-watch}}}
+                {{/is-anon}}
+            </div>
+            <div>
+                {{>content_header/ContentIndicators}}
+                {{^is-anon}}
+                <div class="zp-header-actions">
+                    {{>content_header/ContentActions2}}
+                </div>
+                {{/is-anon}}
+            </div>
+        </div>
     </div>
-    {{/is-anon}}
 </div>
-{{>content_header/ContentTagline}}

@@ -3,22 +3,28 @@
 
 /* 글제목 + actions 영역 */
 .zp-content-header {
-	display: flex;
-	justify-content: space-between;
-	/*align-items: center;*/
-	align-items: end;
-	/* border-bottom: 1px solid #a2a9b1; */
-	margin-bottom:0.6em;
-	h1.mw-first-heading {
-		flex-grow: 1;
-		margin-bottom: 0;
-		border:0;
-		padding: 0;
-		/*font-size: 1.95rem;*/
-	}
-	.zp-header-actions {
-		.mw-portlet-viewactions h3 {
-			height: 2em;
-		}
-	}
+    /* 문서 제목 */
+    h1.mw-first-heading {
+        margin-bottom: 0;
+        border:0;
+        padding: 0;
+        /*font-size: 1.95rem;*/
+    }
+    /* 문서 제목 바로 밑의 영역 */
+    .zch-sub-line {
+        display: flex;
+        justify-content: space-between;
+
+        > div:first-child {
+            flex-grow: 1;
+        }
+
+        > .zch-actions {
+            display: flex;
+
+            > div {
+                margin-left: 0.5em;
+            }
+        }
+    }
 }

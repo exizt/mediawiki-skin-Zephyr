@@ -9,11 +9,11 @@
 	"namemsg": "skinname-zephyr",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"ValidSkinNames": {
 		"zephyr": {
-			"class": "SkinMustache",
+			"class": "ZephyrSkin",
 			"args": [
 				{
 					"name": "zephyr",
@@ -80,5 +80,8 @@
 		"remoteSkinPath": "Zephyr"
 	},
 	"ResourceModuleSkinStyles": {},
+    "AutoloadClasses": {
+		"ZephyrSkin": "includes/ZephyrSkin.php"
+	},
 	"manifest_version": 2
 }
