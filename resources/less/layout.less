@@ -25,10 +25,10 @@ html {
 
 /* 컨텐츠가 나타나는 영역 */
 main.mw-body {
-    flex: 1;
-    order: 2;
+    /*flex: 1;
+    order: 2;*/
     padding:0.5em;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 /* 사이드바의 영역 */
@@ -44,4 +44,14 @@ nav#zpr_sidebar {
         border: 0;
         margin: 1em 0;
     }
+}
+
+/* 컨텐츠 영역 + Sticky Toc 영역 */
+.zp-content-section {
+    flex: 1;
+    order: 2;
+    /*padding:0.5em;*/
+    width: 100%;
+
+    display: flex;
 }

@@ -3,16 +3,17 @@
 
 #toc-sticky {
     flex: 0 0 300px;
-    order: 3;
+    /*order: 3;*/
     display: none;
     position: sticky;
     align-self: flex-start; /* sticky를 위해 필요 */
     padding: 8px;
     top: 0;
     width: 300px;
-    height: 50vh;
+    max-height: calc(~"100vh - 30px");
     overflow: hidden;
     flex-direction: column;
+    font-size: 0.875rem;
 
     > div {
         overflow-y: auto;
@@ -35,7 +36,7 @@
         left: 0;
         top: 0;
         width: 100%;
-        height: 50px;
+        height: 30px;
         margin-top: 8px;
         opacity: 0;
     }
@@ -51,6 +52,12 @@
 
     li {
         list-style-type: none;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
+    ul {
+        margin-top: 0
     }
 
     @media ( min-width: @width-breakpoint-tablet ) {
@@ -59,7 +66,8 @@
 }
 
 #mw-content-text #toc {
-    font-size: 1rem; /* 기본으로 95% 로 되어있는 거 fix */
+    font-size: 0.875rem; /* 기본으로 95% 로 되어있는 거 fix */
+
     h2#mw-toc-heading {
         font-size: 1em; /* '목차'의 글자 크기 */
     }

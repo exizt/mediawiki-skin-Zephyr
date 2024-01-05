@@ -10,16 +10,18 @@
 </header>
 {{>el/Notices}}
 <div class="zpr-content-wrapper zpr-container">
-  <main id="content" class="mw-body">
-    <header class="content__header">
-      {{>content_header}}
-    </header>
-    <div id="bodyContent" data-mw-ve-target-container>
-      {{>content/ContentBody}}
-    </div>
-  </main>
+  <div class="zp-content-section">
+    <main id="content" class="mw-body">
+      <header class="content__header">
+        {{>content_header}}
+      </header>
+      <div id="bodyContent" data-mw-ve-target-container>
+        {{>content/ContentBody}}
+      </div>
+    </main>
+    {{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
+  </div>
   {{>sidebar/Sidebar}}
-  {{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
 </div>
 <hr class="zpr-bottomline">
 <nav>
