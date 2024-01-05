@@ -1,15 +1,21 @@
 @import 'mediawiki.skin.variables';
 @import 'variables.less';
 
-/* 특수 문서 등 기본 UI 부분 fix */
-body.ns-special {
-    /* 특수 문서의 input의 글자 크기 14px-> 16px로 조정 */
+
+
+body.ns-special, body.action-edit {
+    /* 특수 문서, 편집 화면 등 */
+    /* input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지. */
     .oo-ui-textInputWidget .oo-ui-inputWidget-input {
-        font-size: 16px;
+        font-size: @font-size-medium;
         padding-top: 4px;
         padding-bottom: 4px;
         height: 2em;
     }
+}
+
+/* 특수 문서 등 기본 UI 부분 fix */
+body.ns-special {
 
     /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
     .mw-version-ext-authors {
@@ -17,5 +23,40 @@ body.ns-special {
     }
     .mw-body-content > h2, .mw-spcontent > h2 {
         margin-top: 1em;
+    }
+}
+
+/* 편집 화면 */
+.mw-body-content .mw-editform {
+    .wikiEditor-ui .wikiEditor-ui-text textarea {
+        font-size: @font-size-medium;
+    }
+    .editOptions {
+        /* 편집 화면의 하단, 요약, 사소한 편집 등이 나타나는 영역 */
+        font-size: @font-size-small;
+
+        #editpage-copywarn {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+    }
+    .wikiEditor-ui-toolbar {
+        /* 에디터의 툴바 부분 */
+        font-size: @font-size-small;
+    }
+    .mw-editTools {
+        font-size: @font-size-small;
+    }
+}
+
+@media ( max-width: @width-breakpoint-tablet ) {
+    body.ns-special.mw-special-Upload {
+        .mw-body-content .mw-htmlform {
+            /* 파일 업로드 화면에 600px 이하에서 깨지므로 보정 */
+            .mw-input input[name='wpDestFile'] {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
     }
 }
