@@ -2,8 +2,10 @@
     <a href="{{link-mainpage}}">
     {{#data-logos}}
         {{#icon}}<img class="icon" src="{{.}}" width="{{ zephyr-logo-icon-width }}" height="{{ zephyr-logo-icon-height }}">{{/icon}}
-        {{#wordmark}}<img src="{{src}}" width="{{width}}" height="{{height}}">{{/wordmark}}
-        {{^wordmark}}<h1>{{msg-sitetitle}}</h1>{{/wordmark}}
+        {{#zephyr-logo-wordmark-enabled}}
+          {{#wordmark}}<img src="{{src}}" width="{{width}}" height="{{height}}">{{/wordmark}}
+          {{^wordmark}}<h1>{{msg-sitetitle}}</h1>{{/wordmark}}
+        {{/zephyr-logo-wordmark-enabled}}
     {{/data-logos}}
     </a>
 </div>

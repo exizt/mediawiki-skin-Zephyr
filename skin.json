@@ -45,6 +45,9 @@
         },
         "LogoIconHeight": {
             "value": 50
+        },
+        "LogoWordmarkEnabled": {
+            "value": true
         }
     },
 	"MessagesDirs": {

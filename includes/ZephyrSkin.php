@@ -26,9 +26,12 @@ class ZephyrSkin extends SkinMustache {
         $config = $this->getConfig();
         $logoIconWidth = $this->getSkinConfig('LogoIconWidth');
         $logoIconHeight = $this->getSkinConfig('LogoIconHeight');
+        $isWordmarkEnabled = $this->getSkinConfig('LogoWordmarkEnabled');
 
         $data['zephyr-logo-icon-width'] = $logoIconWidth;
         $data['zephyr-logo-icon-height'] = $logoIconHeight;
+
+        $data['zephyr-logo-wordmark-enabled'] = $isWordmarkEnabled;
 
         // $data['html-debug'] = $logoIconWidth;
         // $debug = $this->getTitle()->prefixedText;
@@ -43,3 +46,4 @@ class ZephyrSkin extends SkinMustache {
         return $v;
     }
 }
+
