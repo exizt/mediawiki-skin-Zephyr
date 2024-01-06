@@ -8,3 +8,12 @@
 ```shell
 git clone git@github.com:exizt/mw-skin-Zephyr.git Zephyr
 ```
+
+
+# Configuration
+
+Name | Desc | Values | Default
+:--- | :--- | :--- | :---
+`$wgZephyrLogoIconWidth` | 로고 아이콘 사용시 너비 | number | 50
+`$wgZephyrLogoIconHeight` | 로고 아이콘 사용시 높이 | number | 50
+
