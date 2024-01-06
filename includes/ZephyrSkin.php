@@ -23,9 +23,23 @@ class ZephyrSkin extends SkinMustache {
             $data['html-action-watch'] = '';
         }
 
+        $config = $this->getConfig();
+        $logoIconWidth = $this->getSkinConfig('LogoIconWidth');
+        $logoIconHeight = $this->getSkinConfig('LogoIconHeight');
+
+        $data['zephyr-logo-icon-width'] = $logoIconWidth;
+        $data['zephyr-logo-icon-height'] = $logoIconHeight;
+
+        // $data['html-debug'] = $logoIconWidth;
         // $debug = $this->getTitle()->prefixedText;
         // $data['html-myskin-hello-world'] = print_r($debug, true);
 
         return $data;
+    }
+
+    protected function getSkinConfig($key){
+        $config = $this->getConfig();
+        $v = $config->get('Zephyr'.$key);
+        return $v;
     }
 }

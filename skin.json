@@ -38,6 +38,15 @@
 			]
 		}
 	},
+    "config_prefix": "wgZephyr",
+    "config": {
+        "LogoIconWidth": {
+            "value": 50
+        },
+        "LogoIconHeight": {
+            "value": 50
+        }
+    },
 	"MessagesDirs": {
 		"Zephyr": [
 			"i18n"
