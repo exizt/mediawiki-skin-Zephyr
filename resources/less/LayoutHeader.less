@@ -1,0 +1,53 @@
+/* header layout */
+
+/** HEADER */
+.mw-header {
+    min-height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    /*padding: 1em 8px;*/
+    padding: 0 8px 10px 8px;
+    margin: 0;
+
+    @media ( min-width: @width-breakpoint-tablet) {
+        padding-bottom: 0;
+    }
+
+    #p-logo {
+        flex-grow: 1;
+    }
+    #p-personal {
+        flex-grow: 0;
+        @media ( min-width: @width-breakpoint-tablet) {
+            flex-grow: 0;
+            order: 3;
+        }
+    }
+    .zp-header-search {
+        width: 100%;
+
+        @media ( min-width: @width-breakpoint-tablet) {
+            /*flex: 1;*/
+            flex-grow: 0;
+            order: 2;
+            max-width: 450px;
+            margin-top: 0;
+        }
+    }
+}
+
+#header {
+    border-bottom: 1px solid silver;
+
+    @media ( max-width: calc(@width-breakpoint-tablet - 1px)) {
+        position: sticky;
+        height: 90px;
+        display: block;
+        top: -3em;
+        background-color: white;
+        z-index: 999;
+    }
+}
