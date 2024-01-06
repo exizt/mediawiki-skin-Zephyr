@@ -1,7 +1,7 @@
 @import 'mediawiki.skin.variables';
 @import 'variables.less';
 
-
+/* 기본 기능 인터페이스에 대한 보정 */
 
 body.ns-special, body.action-edit {
     /* 특수 문서, 편집 화면 등 */
@@ -56,6 +56,22 @@ body.ns-special {
             .mw-input input[name='wpDestFile'] {
                 width: 100%;
                 box-sizing: border-box;
+            }
+        }
+    }
+}
+
+/* '특수:버전' 문서에서 테이블의 responsive fix */
+@media ( max-width: @width-breakpoint-tablet ) {
+    body.mw-special-Version {
+        table.wikitable {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: 0;
+
+            th, td {
+                white-space: nowrap
             }
         }
     }
