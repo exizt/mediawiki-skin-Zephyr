@@ -1,10 +1,10 @@
 @import 'mediawiki.skin.variables';
 @import 'variables.less';
 
-/* 기본 기능 인터페이스에 대한 보정 */
+/* ***** 기본 기능 인터페이스에 대한 보정 ***** */
 
+/* 특수 문서, 편집 화면 등 */
 body.ns-special, body.action-edit {
-    /* 특수 문서, 편집 화면 등 */
     /* input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지. */
     .oo-ui-textInputWidget .oo-ui-inputWidget-input {
         font-size: @font-size-medium;
@@ -14,14 +14,9 @@ body.ns-special, body.action-edit {
     }
 }
 
-/* 특수 문서 등 기본 UI 부분 fix */
-body.ns-special {
-
-    /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
-    .mw-version-ext-authors {
-        width: 150px;
-    }
-    .mw-body-content > h2, .mw-spcontent > h2 {
+/* '특수:특수문서', '특수:버전'의 소제목의 상단 여백 */
+body.ns-special.mw-special-Specialpages, body.mw-special-Version {
+    .mw-body-content > h2 {
         margin-top: 1em;
     }
 }
@@ -49,8 +44,9 @@ body.ns-special {
     }
 }
 
-@media ( max-width: @width-breakpoint-tablet ) {
-    body.ns-special.mw-special-Upload {
+/* '특수:올리기' 문서 */
+body.ns-special.mw-special-Upload {
+    @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
         .mw-body-content .mw-htmlform {
             /* 파일 업로드 화면에 600px 이하에서 깨지므로 보정 */
             .mw-input input[name='wpDestFile'] {
@@ -61,9 +57,19 @@ body.ns-special {
     }
 }
 
-/* '특수:버전' 문서에서 테이블의 responsive fix */
-@media ( max-width: @width-breakpoint-tablet ) {
-    body.mw-special-Version {
+/* '특수:버전' 문서 */
+body.mw-special-Version {
+
+    @media ( min-width: @width-breakpoint-tablet ) {
+        /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
+        .mw-version-ext-authors {
+            min-width: 10em;
+            max-width: 15em;
+        }
+    }
+
+    @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
+        /* '특수:버전' 문서에서 테이블의 responsive fix */
         table.wikitable {
             display: block;
             overflow-x: auto;
