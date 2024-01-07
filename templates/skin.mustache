@@ -1,3 +1,9 @@
+<script>
+(function(){
+  var theme = localStorage.getItem("theme") === "dark" ? "dark" : ""
+  document.querySelector("html").setAttribute("data-theme", theme)
+})();
+</script>
 <header id="header">
   {{>LayoutHeader}}
 </header>

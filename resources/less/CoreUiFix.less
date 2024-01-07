@@ -97,3 +97,33 @@ body.mw-special-Version {
         }
     }
 }
+
+body.skin-zephyr {
+    .wikitable {
+        background-color: inherit;
+        color: inherit;
+
+        th {
+            background-color: @color-bg-wikitable-heading;
+            color: @color-text-base;
+        }
+        > tr > th, > tr > td, > * > tr > th, > * > tr > td {
+            border-color: @color-border-secondary;
+        }
+    }
+
+
+    pre {
+        background-color: @color-bg-tertiary;
+        color: inherit;
+        border-color: @color-border-tertiary;
+        border-radius: 0.5em;
+    }
+
+    .catlinks {
+        /*background-color: @color-bg-tertiary;*/
+        background-color: inherit;
+        border-color: @color-border-secondary;
+        font-size: @font-size-small;
+    }
+}

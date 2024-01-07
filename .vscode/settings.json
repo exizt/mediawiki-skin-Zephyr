@@ -16,9 +16,11 @@
         "specialpage",
         "thumbimage",
         "thumbinner",
+        "tocnumber",
         "toctogglelabel",
         "vform",
         "viewactions",
+        "wikitable",
         "Wordmark"
     ]
 }

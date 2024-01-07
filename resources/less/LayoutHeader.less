@@ -42,14 +42,14 @@
 }
 
 #header {
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid @color-border-secondary;
 
     @media ( max-width: calc(@width-breakpoint-tablet - 1px)) {
         position: sticky;
         height: 90px;
         display: block;
         top: -3em;
-        background-color: white;
+        background-color: @color-bg-base;
         z-index: 999;
     }
 }

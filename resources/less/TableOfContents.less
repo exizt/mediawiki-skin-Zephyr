@@ -15,6 +15,10 @@
     flex-direction: column;
     font-size: @font-size-small;
 
+    a, a:visited {
+        color: @color-link;
+    }
+
     > div {
         overflow-y: auto;
     }
@@ -24,7 +28,6 @@
         /*height: 50px;*/
         font-size: 1em;
         cursor: pointer;
-        background: @background-color-article;
         text-align: center;
         padding: 10px;
         margin: 0;
@@ -47,7 +50,6 @@
 
     input:checked ~ div {
         display: block;
-        background: @background-color-article;
     }
 
     li {
@@ -68,15 +70,26 @@
 #mw-content-text #toc {
     /* 본문에 나타나는 TOC */
     font-size: @font-size-small; /* 기본으로 95% 로 되어있는 거 fix */
+    border-color: @color-gray;
+    background-color: @color-bg-tertiary;
+    color: inherit;
 
+    /* '목차' 글자 */
     h2#mw-toc-heading {
-        font-size: 1em; /* '목차'의 글자 크기 */
+        font-size: 1em;
     }
+
+    /* 번호 텍스트 */
+    .tocnumber {
+        color: @color-text-base;
+    }
+
+    /* 링크 및 '숨기기'(.toctogglelabel) 텍스트 */
+    .toctogglelabel, a {
+        color: @color-link-base;
+    }
+
     @media ( min-width: @width-breakpoint-tablet ) {
         display:none !important;
-    }
-    color: #0645ad;
-    .toctogglelabel, a {
-        color: #0645ad;
     }
 }

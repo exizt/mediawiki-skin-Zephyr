@@ -12,7 +12,7 @@
         display: none;
 
         ul {
-            background: @background-color-article;
+            background: var(--color-bg-dropdown);
             position: absolute;
             overflow-y: auto;
             z-index: 2;
@@ -32,5 +32,9 @@
             display: block;
             opacity: 1;
         }
+    }
+
+    a, a:visited {
+        color: @color-link;
     }
 }

@@ -2,11 +2,11 @@
 /** ResourceLoaderSkinModule: normalize,elements,content-tables,content-links,content-media,interface-message-box,interface-category,toc */
 
 html {
-    background: @background-color-base;
+    background: @color-bg-base;
 }
 
 body {
-    background: @background-color-article;
+    background: @color-bg-base;
     /*max-width: 800px;
     margin: 0 auto;*/
     font-family: @font-family;
@@ -17,21 +17,76 @@ body {
     }
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: @color-base;
-}
+body.skin-zephyr {
+    color: @color-text-base;
+    h1, h2, h3, h4, h5, h6 {
+        color: @color-text-base;
+    }
 
-a {
-    color: @color-link;
+    a {
+        color: @color-link;
 
-    &:visited {
-        color: @color-link--visited;
+        &:visited {
+            color: @color-link--visited;
+        }
+    }
+
+    div.thumbinner {
+        border-color: @color-gray;
+        background-color: @color-bg-tertiary;
+        color: @color-thumb;
+        a {
+            color: @color-thumb;
+        }
+    }
+    hr {
+        background-color: @color-border-secondary;
+    }
+
+    h1, h2 {
+        border-bottom-color: @color-border-secondary;
+    }
+
+    :not(pre) > code {
+        color: var(--color-text-code);
+        background-color: var(--color-bg-code);
+        border-radius: 4px;
+        /*background-color: inherit;*/
+        border: 0;
+        font-size: 90%;
+        font-family: SFMono-Regular,Menlo,Monaco,Consolas,Courier New,monospace;
+        /*word-break: break-word;*/
+
+        &.sof {
+            color: var(--color-text-code--sof);
+            /*color: #0c0d0e;*/
+            background-color: var(--color-bg-code--sof);
+            /*background-color:rgb(227, 230, 232);*/
+            border: 0;
+            border-radius: 4px;
+            font-size: 13px;
+            box-sizing:border-box;
+            padding:2px 4px;
+            line-height:1.5;
+            font-weight:400;
+            font-family:ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
+        }
+        &.github {
+            color: rgb(31, 35, 40);
+            // color: rgb(230, 237, 243); // dark
+            background-color: rgba(175, 184, 193, 0.2);
+            // background-color: rgba(110, 118, 129, 0.4); // dark
+            box-sizing: border-box;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            white-space: break-spaces;
+            background-color: var(--bgColor-neutral-muted,var(--color-neutral-muted));
+            border-radius: 6px;
+            font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
     }
 }
 
@@ -48,6 +103,7 @@ a {
 .content {
     &__header {
         position: relative;
+        margin-bottom: 0.5em;
     }
 
     &__heading {
@@ -69,7 +125,7 @@ a {
 
     &__tagline {
         clear: both;
-        color: @color-base;
+        color: @color-text-base;
         font-size: 0.85em;
         margin-bottom: 12px;
         line-height: 1;
@@ -91,12 +147,12 @@ a {
 }
 
 .messagebox {
-    color: @color-base;
+    color: @color-text-base;
     background-color: @background-color-warning;
     border-color: @color-gray;
 
     a {
-        color: @color-base;
+        color: @color-text-base;
         font-weight: bold;
     }
 }
@@ -106,18 +162,7 @@ a {
     border: 0;
 }
 
-.toc,
-div.thumbinner {
-    border-color: @color-gray;
-    background-color: @background-color-thumb;
-}
 
-div.thumbinner {
-    color: @color-thumb;
-    a {
-        color: @color-thumb;
-    }
-}
 
 /* others */
 #mw-indicator-mw-helplink a {
