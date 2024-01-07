@@ -1,25 +1,19 @@
-<div class="zp-content-header">
-    {{>content_header/ContentHeading}}
-    {{>content_header/ContentIndicators}}
-    {{^is-specialpage}}
-    <div class="zch-sub-line">
-        <div>
-          {{>content_header/ContentTagline}}
-        </div>
-        <div class="zch-actions">
-            <div class="zch-action-watch">
-                {{^is-anon}}
-                {{{html-action-watch}}}
-                {{/is-anon}}
-            </div>
-            <div>
-                {{^is-anon}}
-                <div class="zp-header-actions">
-                    {{>content_header/ContentActions2}}
-                </div>
-                {{/is-anon}}
-            </div>
-        </div>
+<div class="ze-content-header">
+  {{>content_header/ContentHeading}}
+  {{>content_header/ContentIndicators}}
+  <div class="zch-sub-line">
+    <div>
+      {{>content_header/ContentTagline}}
     </div>
-    {{/is-specialpage}}
+    <div class="zch-actions">
+      {{^is-anon}}
+      <div class="zch-action-watch">
+        {{{html-action-watch}}}
+      </div>
+      {{/is-anon}}
+      {{^is-anon}}
+        {{>content_header/ContentActions2}}
+      {{/is-anon}}
+    </div>
+  </div>
 </div>
