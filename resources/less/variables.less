@@ -18,7 +18,8 @@
 @--color-link--visited: #0b0080;
 @--color-link-dark: rgb(138, 180, 248);
 @--color-link--active-dark: rgb(138, 180, 248);
-@--color-link--visited-dark: rgb(197, 138, 249);
+// @--color-link--visited-dark: rgb(197, 138, 249);
+@--color-link--visited-dark: rgb(138, 149, 249);
 
 /* 설명 : secondary (옅음), tertiary (더 옅음) */
 /* new colors */
@@ -28,16 +29,20 @@
 
 /* wikitable */
 @--color-bg-wikitable-heading: #eaecf0;
-@--color-bg-wikitable-heading--dark: rgb(51, 55, 56);
+@--color-bg-wikitable-heading--dark: rgb(37, 41, 43);
 /* bg */
 @--color-bg-base: #ffffff;
-@--color-bg-base--dark: rgb(32, 33, 36);
+ @--color-bg-base--dark: rgb(32, 33, 36);
+// @--color-bg-base--dark: rgb(27, 30, 31);
 // @--color-bg-base--dark: rgb(37, 38, 39);
 @--color-bg-secondary: #eaecf0;
 // @--color-bg-secondary--dark: rgb(51, 55, 56);
-@--color-bg-secondary--dark: rgb(37, 38, 39);
+@--color-bg-secondary--dark: rgb(43, 45, 46);
 @--color-bg-tertiary: #f8f9fa;
-@--color-bg-tertiary--dark: rgb(27, 30, 31);
+// @--color-bg-tertiary--dark: rgb(32, 33, 36);
+// @--color-bg-tertiary--dark: rgb(27, 30, 31);
+@--color-bg-tertiary--dark: rgb(36, 38, 41);
+
 /* border */
 @--color-border-base: #54595d;
 @--color-border-base--dark: rgb(140, 130, 115);
@@ -121,6 +126,10 @@
     --color-link-base: @--color-link-base;
     --color-link-base--active: @--color-link-base--active;
     --color-link-base--visited: @--color-link-base--visited;
+
+    /* custom */
+    --color-border-toc-inner: @--color-border-secondary;
+    --color-bg-toc-inner: @--color-bg-tertiary;
     --color-bg-dropdown: @--color-bg-base;
     --color-bg-search-input: @--color-bg-base;
     --color-text-search-input: @--color-text-base;
@@ -156,6 +165,10 @@
     --color-link-base: @--color-link-base--dark;
     --color-link-base--active: @--color-link-base--active--dark;
     --color-link-base--visited: @--color-link-base--visited--dark;
+
+    /* custom */
+    --color-border-toc-inner: @--color-border-tertiary--dark;
+    --color-bg-toc-inner: @--color-bg-tertiary--dark;
     --color-bg-dropdown: @--color-bg-secondary--dark;
     --color-bg-search-input: @--color-bg-base--dark;
     --color-text-search-input: @--color-text-base--dark;
