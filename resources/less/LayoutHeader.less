@@ -1,7 +1,7 @@
 /* header layout */
 
 /** HEADER */
-.mw-header {
+.zp-header {
     min-height: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -21,13 +21,17 @@
     #p-logo {
         flex-grow: 1;
     }
-    #p-personal {
+    /* dark mode 토글 버튼 + personalMenu 영역 */
+    .zph-user-nav {
         flex-grow: 0;
         @media ( min-width: @width-breakpoint-tablet) {
             flex-grow: 0;
             order: 3;
         }
+        display: flex;
+
     }
+
     .zp-header-search {
         width: 100%;
 
@@ -44,6 +48,7 @@
 #header {
     border-bottom: 1px solid @color-border-secondary;
 
+    /* sticky */
     @media ( max-width: calc(@width-breakpoint-tablet - 1px)) {
         position: sticky;
         height: 90px;
