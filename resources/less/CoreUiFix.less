@@ -3,9 +3,7 @@
 
 /* ***** 기본 기능 인터페이스에 대한 보정 ***** */
 
-body.ns-special {
-    line-height: 1.6;
-}
+/* *** 기본 기능 인터페이스에 대한 보정 *** */
 /* 특수 문서, 편집 화면 등 */
 body.ns-special, body.action-edit {
     /* input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지. */
@@ -17,12 +15,71 @@ body.ns-special, body.action-edit {
     }
 }
 
-/* '특수:특수문서', '특수:버전'의 소제목의 상단 여백 */
-body.ns-special.mw-special-Specialpages, body.mw-special-Version {
-    .mw-body-content > h2 {
-        margin-top: 1em;
+
+/* *** '특수 문서'에 대한 인터페이스 보정 *** */
+body.ns-special {
+    line-height: 1.6;
+
+    /* '특수:특수문서', '특수:버전'의 소제목의 상단 여백 */
+    &.ns-special.mw-special-Specialpages, &.mw-special-Version {
+        .mw-body-content > h2 {
+            margin-top: 1em;
+        }
     }
+
+    /* '특수:올리기' 문서 */
+    &.mw-special-Upload {
+        @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
+            .mw-body-content .mw-htmlform {
+                /* 파일 업로드 화면에 600px 이하에서 깨지므로 보정 */
+                .mw-input input[name='wpDestFile'] {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+
+    /* '특수:버전' 문서 */
+    &.mw-special-Version {
+
+        @media ( min-width: @width-breakpoint-tablet ) {
+            /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
+            .mw-version-ext-authors {
+                min-width: 10em;
+                max-width: 15em;
+            }
+        }
+
+        @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
+            /* '특수:버전' 문서에서 테이블의 responsive fix */
+            table.wikitable {
+                display: block;
+                overflow-x: auto;
+                overflow-y: hidden;
+                border: 0;
+                background-color: inherit;
+
+                tbody {
+                    background-color: #f8f9fa;
+                }
+
+                th, td {
+                    white-space: nowrap
+                }
+
+                &#sv-ext {
+                    th[colspan="5"]{
+                        text-align: left;
+                        padding-left: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+
 }
+
 
 /* 편집 화면 */
 .mw-body-content .mw-editform {
@@ -47,57 +104,38 @@ body.ns-special.mw-special-Specialpages, body.mw-special-Version {
     }
 }
 
-/* '특수:올리기' 문서 */
-body.ns-special.mw-special-Upload {
-    @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
-        .mw-body-content .mw-htmlform {
-            /* 파일 업로드 화면에 600px 이하에서 깨지므로 보정 */
-            .mw-input input[name='wpDestFile'] {
-                width: 100%;
-                box-sizing: border-box;
-            }
+
+/* ***** 극단적으로 작은 화면에 대한 보정 ***** */
+/* 폭 280px를 최소의 마지노선으로 보고 있음. */
+/* 매우 작은 사이즈에 대해 특수하게 fix하는 부분 */
+@media screen and (max-width: 300px) {
+    /* 이제는 안 쓰는 듯함 */
+    /* 290으로 되어있는 것을 변경함 */
+    /*
+    .mw-ui-vform {
+        width: inherit;
+    }
+    */
+
+    /* '최근 목록', '주시목록 최근 바뀜', '가리키는 글의 최근 바뀜' 등에서 화살표가 나타날 수 있는 공간. 15px 정도인데, 공간 아끼려고.. */
+    .mw-enhancedchanges-arrow-space {
+        width: 0; /* 15px인데, 아끼려고.. */
+    }
+}
+
+/* 가리키는 글의 최근 바뀜 */
+body.ns-special.mw-special-Recentchangeslinked {
+    /* 380 이하의 매우 작은 화면에서 깨지는 것 보정 */
+    @media screen and (max-width: 380px) {
+        /* 가리키는 글의 최근 바뀜 - 문서이름 */
+        .mw-recentchanges-table .targetForm .mw-input input[name="target"]{
+            width: 100%;
         }
     }
 }
 
-/* '특수:버전' 문서 */
-body.mw-special-Version {
 
-    @media ( min-width: @width-breakpoint-tablet ) {
-        /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
-        .mw-version-ext-authors {
-            min-width: 10em;
-            max-width: 15em;
-        }
-    }
-
-    @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
-        /* '특수:버전' 문서에서 테이블의 responsive fix */
-        table.wikitable {
-            display: block;
-            overflow-x: auto;
-            overflow-y: hidden;
-            border: 0;
-            background-color: inherit;
-
-            tbody {
-                background-color: #f8f9fa;
-            }
-
-            th, td {
-                white-space: nowrap
-            }
-
-            &#sv-ext {
-                th[colspan="5"]{
-                    text-align: left;
-                    padding-left: 0.5em;
-                }
-            }
-        }
-    }
-}
-
+/* *** 색상 등과 관련되어서 *** */
 body.skin-zephyr {
     .wikitable {
         background-color: inherit;
