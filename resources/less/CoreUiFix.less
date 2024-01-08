@@ -60,9 +60,11 @@ body.ns-special {
                 border: 0;
                 background-color: inherit;
 
+                /*
                 tbody {
                     background-color: #f8f9fa;
                 }
+                */
 
                 th, td {
                     white-space: nowrap
@@ -85,10 +87,30 @@ body.ns-special {
 .mw-body-content .mw-editform {
     .wikiEditor-ui .wikiEditor-ui-text textarea {
         font-size: @font-size-medium;
+        color: @color-text-base;
+        background: @color-bg-base;
     }
+    .wikiEditor-ui-toolbar {
+        background: var(--color-bg-editor-ui-toolbar);
+
+        .tabs span.tab a.current, .wikiEditor-ui-toolbar .tabs span.tab a.current:visited {
+            color: var(--color-text-editor-ui-toolbar);
+        }
+        .group .label {
+            color: var(--color-text-editor-ui-toolbar-secondary);
+        }
+        .tabs span.tab a {
+            color: @color-link-base;
+        }
+    }
+
     .editOptions {
         /* 편집 화면의 하단, 요약, 사소한 편집 등이 나타나는 영역 */
         font-size: @font-size-small;
+
+        /* 색상 */
+        background-color: @color-bg-secondary;
+        color: inherit;
 
         #editpage-copywarn {
             padding-top: 1em;
