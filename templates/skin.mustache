@@ -5,25 +5,25 @@
 })();
 </script>
 <header id="header">
-  {{>LayoutHeader}}
+    {{>LayoutHeader}}
 </header>
 {{>el/Notices}}
 <div class="zp-content-wrapper zp-container">
-  <div class="zp-content-section">
-    <main id="content" class="mw-body">
-      <header class="content__header">
-        {{>content_header}}
-      </header>
-      <div id="bodyContent" data-mw-ve-target-container>
-        {{>content/ContentBody}}
-      </div>
-    </main>
-    {{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
-  </div>
-  {{>sidebar/Sidebar}}
+    <div class="zp-content-section">
+        <main id="content" class="mw-body">
+        <header class="content__header">
+            {{>content_header}}
+        </header>
+        <div id="bodyContent" data-mw-ve-target-container>
+            {{>content/ContentBody}}
+        </div>
+        </main>
+        {{#data-toc}}{{>content/TableOfContents}}{{/data-toc}}
+    </div>
+    {{>sidebar/Sidebar}}
 </div>
 <hr class="zp-layout-bottom-line">
 <nav>
-  {{>el/Languages}}
+    {{>el/Languages}}
 </nav>
 {{>footer/Footer}}
