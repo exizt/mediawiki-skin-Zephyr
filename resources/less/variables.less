@@ -32,7 +32,7 @@
 @--color-bg-wikitable-heading--dark: rgb(37, 41, 43);
 /* bg */
 @--color-bg-base: #ffffff;
- @--color-bg-base--dark: rgb(32, 33, 36);
+@--color-bg-base--dark: rgb(32, 33, 36);
 // @--color-bg-base--dark: rgb(27, 30, 31);
 // @--color-bg-base--dark: rgb(37, 38, 39);
 @--color-bg-secondary: #eaecf0;
@@ -57,6 +57,10 @@
 @--color-link-base--active--dark: rgb(138, 180, 248);
 @--color-link-base--visited: #0b0080;
 @--color-link-base--visited--dark: rgb(197, 138, 249);
+@--color-link-new: #dd3333;
+@--color-link-new--dark: #a55858;
+@--color-link-new--visited: #a55858;
+@--color-link-new--visited--dark: #8d4b4b;
 
 
 /* color var */
@@ -83,15 +87,15 @@
 @color-link-base: var(--color-link-base);
 @color-link-base--active: var(--color-link-base--active);
 @color-link-base--visited: var(--color-link-base--visited);
+@color-link-new: var(--color-link-new);
+@color-link-new--visited: var(--color-link-new--visited);
 
 
 
 /* etc */
 @icon-filter: invert(0.3);
-@color-link-new: @color-link;
 @color-link-stub: @color-link;
 @color-link-external: @color-link;
-@color-link-new--visited: @color-link--visited;
 @width-breakpoint-tablet: 720px;
 @width-breakpoint-desktop: 1000px;
 
@@ -126,6 +130,8 @@
     --color-link-base: @--color-link-base;
     --color-link-base--active: @--color-link-base--active;
     --color-link-base--visited: @--color-link-base--visited;
+    --color-link-new: @--color-link-new;
+    --color-link-new--visited: @--color-link-new--visited;
 
     /* custom */
     --color-border-toc-inner: @--color-border-secondary;
@@ -165,6 +171,8 @@
     --color-link-base: @--color-link-base--dark;
     --color-link-base--active: @--color-link-base--active--dark;
     --color-link-base--visited: @--color-link-base--visited--dark;
+    --color-link-new: @--color-link-new--dark;
+    --color-link-new--visited: @--color-link-new--visited--dark;
 
     /* custom */
     --color-border-toc-inner: @--color-border-tertiary--dark;

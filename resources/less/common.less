@@ -24,10 +24,17 @@ body.skin-zephyr {
     }
 
     a {
-        color: @color-link;
+        color: @color-link-base;
 
         &:visited {
-            color: @color-link--visited;
+            color: @color-link-base--visited;
+        }
+
+        &.new {
+            color: @color-link-new;
+            &:visited {
+                color: @color-link-new--visited;
+            }
         }
     }
 
