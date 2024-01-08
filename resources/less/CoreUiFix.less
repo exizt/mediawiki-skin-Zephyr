@@ -126,4 +126,51 @@ body.skin-zephyr {
         border-color: @color-border-secondary;
         font-size: @font-size-small;
     }
+
+}
+
+:root[data-theme='dark'] {
+    body.skin-zephyr {
+        .mw-search-profile-tabs {
+            background-color: @color-bg-tertiary;
+        }
+
+        #mw-searchoptions {
+            background-color: @color-bg-tertiary;
+        }
+
+        .search-types .current a {
+            color: @color-link-base;
+        }
+
+        .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+            background-color: inherit;
+        }
+        .suggestions-results {
+            background-color: @color-bg-base;
+            color: @color-text-base;
+        }
+        .suggestions a.mw-searchSuggest-link, .suggestions a.mw-searchSuggest-link:hover, .suggestions a.mw-searchSuggest-link:active, .suggestions a.mw-searchSuggest-link:focus {
+            color: @color-text-base;
+        }
+        .suggestions-result {
+            color: @color-text-base;
+        }
+        .suggestions-special {
+            background-color: @color-bg-base;
+            color: @color-text-base;
+        }
+        .suggestions-special .special-query {
+            color: @color-text-base;
+        }
+        .suggestions-result-current {
+            background-color: #223c71;
+        }
+        .oo-ui-menuSelectWidget {
+            background-color: @color-bg-base;
+        }
+        .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+            color: @color-text-base;
+        }
+    }
 }
