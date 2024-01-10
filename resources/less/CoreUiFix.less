@@ -38,6 +38,10 @@ body.ns-special {
                 }
             }
         }
+        textarea#wpUploadDescription {
+            background-color: inherit;
+            color: @color-text-base;
+        }
     }
 
     /* '특수:버전' 문서 */
@@ -216,6 +220,9 @@ body.skin-zephyr {
 
 /* dark 모드에서만 보정해도 될 경우 */
 :root[data-theme='dark'] {
+    * {
+        scrollbar-color: #454a4d #202324;
+    }
     body.skin-zephyr {
         /* '특수:검색'문서에서 탭 부분 */
         .mw-search-profile-tabs {
@@ -284,14 +291,24 @@ body.skin-zephyr {
         }
 
         /* oo-ui에서 select의 ui를 대체하는 요소 */
-        .oo-ui-dropdownWidget.oo-ui-widget-enabled {
-            .oo-ui-dropdownWidget-handle {
-                background-color: @color-bg-base;
-                color: @color-text-base;
-            }
-            &.oo-ui-dropdownWidget-open {
+        .oo-ui-dropdownWidget, .oo-ui-dropdownInputWidget {
+            &.oo-ui-widget-enabled {
                 .oo-ui-dropdownWidget-handle {
-                    background-color: @color-bg-secondary;
+                    background-color: @color-bg-base;
+                    color: @color-text-base;
+                }
+                &.oo-ui-dropdownWidget-open {
+                    .oo-ui-dropdownWidget-handle {
+                        background-color: @color-bg-secondary;
+                    }
+                }
+            }
+            &.oo-ui-widget-disabled {
+                background-color: @color-bg-secondary;
+                .oo-ui-dropdownWidget-handle {
+                    background-color: inherit;
+                    color: @color-text-secondary;
+                    text-shadow: none;
                 }
             }
         }
@@ -299,12 +316,24 @@ body.skin-zephyr {
             background-color: @color-bg-base;
         }
 
+        .oo-ui-actionFieldLayout-button {
+            background-color: @color-bg-secondary;
+            .oo-ui-buttonElement-button {
+                background-color: inherit;
+                color: @color-text-base;
+            }
+        }
 
         .oo-ui-textInputWidget .oo-ui-inputWidget-input {
             color: @color-text-base;
         }
 
-        .rcoptions {
+        /* '특수:활동적인사용자'문서의 사용자 표시 input 등 */
+        .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled {
+            background-color: inherit;
+        }
+
+        .rcoptions, .cloptions {
             /* 최근 바뀜 - 화면 우측의 '범례' 박스 */
             .mw-changeslist-legend {
                 background-color: var(--color-bg-base);
@@ -327,6 +356,7 @@ body.skin-zephyr {
         /* 파일 상세 페이지의 '미디어 뷰어에서 열기' 버튼 */
         .mw-ui-button {
             background-color: @color-bg-tertiary;
+            color: @color-text-base;
         }
         /* '계정 만들기'에서 우측의 텍스트 */
         .mw-number-text {
@@ -335,5 +365,80 @@ body.skin-zephyr {
                 color: @color-text-secondary;
             }
         }
+        /* '새 파일 목록'문서에서 날짜를 선택하는 요소 */
+        .mw-widget-dateInputWidget-handle {
+            background-color: @color-bg-secondary;
+        }
+        /*
+        .mw-widget-dateInputWidget-calendar {
+            background-color: @color-bg-secondary;
+        }*/
+        .mw-widget-calendarWidget {
+            background-color: @color-bg-secondary;
+        }
+        .mw-widget-calendarWidget-day {
+            color: @color-text-base;
+        }
+        .mw-widget-calendarWidget-day-additional {
+            color: @color-text-secondary;
+        }
+
+        .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+            color: @color-text-base;
+        }
+
+        &.ns-special {
+            .mw-body-content {
+                table {
+                    /* '문자열 찾아 바꾸기'문서의 입력 textarea */
+                    textarea {
+                        background-color: @color-bg-base;
+                        color: @color-text-base;
+                    }
+
+                    /* '문자 역사 합치기' */
+                    input#target, input#dest {
+                        background-color: @color-bg-base;
+                        color: @color-text-base;
+                        border: 1px solid @color-border-secondary;
+                    }
+                }
+
+                /* '문자열 찾아 바꾸기'문서의 옵션 */
+                .ext-replacetext-searchoptions {
+                    background-color: @color-bg-secondary;
+                    color: @color-text-secondary;
+                }
+            }
+
+            &.mw-special-ApiSandbox {
+                /* 'API 실험실' */
+                .mw-apisandbox-toolbar {
+                    background-color: @color-bg-secondary;
+                    color: @color-text-secondary;
+                }
+            }
+            /* 'API 실험실' */
+            .oo-ui-outlineOptionWidget {
+                background-color: @color-bg-secondary;
+                color: @color-link-base;
+                &:hover {
+                    background-color: @color-bg-tertiary;
+                }
+            }
+            .mw-prefs-buttons {
+                background-color: @color-bg-secondary;
+                color: @color-link-base;
+            }
+            .oo-ui-tabSelectWidget-framed {
+                background-color: @color-bg-secondary;
+            }
+            .oo-ui-optionWidget-selected {
+                background-color: @color-bg-secondary;
+                color: @color-text-base;
+            }
+        }
     }
+
+
 }
