@@ -439,5 +439,11 @@ body.skin-zephyr {
         ol.references li:target, sup.reference:target {
             background-color: @color-bg-tertiary;
         }
+
+        /* math 확장 기능 연관 */
+        .mwe-math-fallback-image-inline,
+        .mwe-math-fallback-image-display {
+            filter: hue-rotate(180deg) invert(1);
+        }
     }
 }
