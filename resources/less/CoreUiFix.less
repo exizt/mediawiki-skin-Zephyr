@@ -466,5 +466,22 @@ body.skin-zephyr {
         .mw-message-box {
             color: @color-link-base;
         }
+        /* 위키에디터에서 링크 넣기 등의 도구 */
+        .ui-widget-content {
+            /*border-color: */
+            background: @color-bg-tertiary;
+            color: @color-text-base;
+        }
+        .ui-widget-header {
+            background: @color-bg-secondary;
+            color: @color-text-base;
+        }
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+            background: @color-bg-secondary;
+            color: @color-text-secondary;
+        }
+        .ui-widget-overlay {
+            background: @color-bg-secondary;
+        }
     }
 }
