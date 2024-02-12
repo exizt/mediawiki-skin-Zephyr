@@ -483,5 +483,26 @@ body.skin-zephyr {
         .ui-widget-overlay {
             background: @color-bg-secondary;
         }
+        /* 텍스트 비교 */
+        .diff-addedline {
+            border-color: #6d8ba7; /* #a3d3ff */
+            .diffchange {
+                background: #2f363a;
+            }
+
+        }
+        .diff-deletedline {
+            border-color: #928359; /* #ffe49c */
+            .diffchange {
+                background: #403c31;
+            }
+        }
+        .diff-context {
+            /*background: #242525;*/
+            background: @color-bg-base;
+            /*color: #ddeaf7;*/
+            color: @color-text-base;
+            border-color: #9d9fa3; /* #eaecf0 */
+        }
     }
 }
