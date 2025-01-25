@@ -26,7 +26,7 @@ nav#zpr_sidebar {
 
     .zp-sidebar-portlet {
         /*margin-bottom: 1em;*/
-        width: 150px;
+        /* width: 150px; */
         padding: 1em;
         box-sizing: border-box;
 
@@ -36,6 +36,9 @@ nav#zpr_sidebar {
             font-size: 0.75em;
             font-weight: normal;
             border-bottom: 1px solid black;
+        }
+        @media ( min-width: @width-breakpoint-desktop ) {
+            width: 150px;
         }
     }
     .mw-portlet-navigation h3 {
