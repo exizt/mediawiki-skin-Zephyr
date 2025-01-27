@@ -1,8 +1,6 @@
 /* colors */
 @--background-color-warning: #0c281a;
 @--background-color-warning-dark: #0c281a;
-@--background-color-base: #ffffff;
-@--background-color-base-dark: rgb(37, 38, 39);
 @--background-color-article: #ffffff;
 @--background-color-article-dark: rgb(37, 38, 39);
 @--background-color-thumb: #0c281a;
@@ -20,6 +18,13 @@
 // @--color-link--active-dark: rgb(138, 180, 248);
 // @--color-link--visited-dark: rgb(197, 138, 249);
 // @--color-link--visited-dark: rgb(138, 149, 249);
+
+/* background */
+@--background-color-base: #ffffff;
+@--background-color-base-dark: rgb(37, 38, 39);
+@--background-color-interactive-subtle: #f8f9fa;
+@--background-color-interactive-subtle--dark: #3b3b3b;
+
 
 /* 설명 : secondary (옅음), tertiary (더 옅음) */
 /* new colors */
@@ -123,6 +128,7 @@
     // --color-link--visited : @--color-link--visited;
 
     /* new colors */
+    --color-base: @--color-text-base;
     --color-text-base: @--color-text-base;
     --color-text-secondary: @--color-text-secondary;
     --color-text-tertiary: @--color-text-tertiary;
@@ -138,6 +144,12 @@
     --color-link-base--visited: @--color-link-base--visited;
     --color-link-new: @--color-link-new;
     --color-link-new--visited: @--color-link-new--visited;
+
+    /* default - background */
+    --background-color-interactive-subtle: @--background-color-interactive-subtle;
+
+    /* default - text */
+
 
     /* custom */
     --color-border-toc-inner: @--color-border-secondary;
@@ -168,6 +180,7 @@
     // --color-link--visited : @--color-link--visited-dark;
 
     /* new colors */
+    --color-base: @--color-text-base--dark;
     --color-text-base: @--color-text-base--dark;
     --color-text-secondary: @--color-text-secondary--dark;
     --color-text-tertiary: @--color-text-tertiary--dark;
@@ -183,6 +196,9 @@
     --color-link-base--visited: @--color-link-base--visited--dark;
     --color-link-new: @--color-link-new--dark;
     --color-link-new--visited: @--color-link-new--visited--dark;
+
+    /* default - background */
+    --background-color-interactive-subtle: @--background-color-interactive-subtle--dark;
 
     /* custom */
     --color-border-toc-inner: @--color-border-tertiary--dark;
