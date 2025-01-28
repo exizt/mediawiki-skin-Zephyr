@@ -18,7 +18,7 @@ body.ns-special, body.action-edit {
 
 /* *** '특수 문서'에 대한 인터페이스 보정 *** */
 body.ns-special {
-    line-height: 1.6;
+    line-height: 1.6; /* 기본값 0.875rem */
 
     /* '특수:특수문서', '특수:버전'의 소제목의 상단 여백 */
     &.ns-special.mw-special-Specialpages, &.mw-special-Version {
@@ -84,6 +84,12 @@ body.ns-special {
         }
     }
 
+    /* '특수:환경설정' 문서 */
+    &.mw-special-Preferences {
+        #preferences {
+            margin-bottom: 5rem; /* 하단 여백 bug fix */
+        }
+    }
 }
 
 
@@ -421,8 +427,9 @@ body.skin-zephyr {
                     background-color: @color-bg-tertiary;
                 }
             }
-            .mw-prefs-buttons {
-                background-color: @color-bg-secondary;
+            /* 환경 설정 - 하단 버튼 영역 */
+            #preferences .mw-htmlform-submit-buttons {
+                background-color: @color-bg-base;
                 color: @color-link-base;
             }
             .oo-ui-tabSelectWidget-framed {
