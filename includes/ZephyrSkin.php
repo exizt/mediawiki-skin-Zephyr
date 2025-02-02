@@ -2,7 +2,7 @@
 # namespace MediaWiki\Skins\Zephyr;
 use MediaWiki\MediaWikiServices;
 
-use SkinMustache;
+// use SkinMustache;
 
 class ZephyrSkin extends SkinMustache {
 
