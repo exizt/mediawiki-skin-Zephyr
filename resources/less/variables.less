@@ -25,13 +25,20 @@
 @--background-color-interactive-subtle: #f8f9fa;
 @--background-color-interactive-subtle--dark: #3b3b3b;
 
+/* message and warning */
+@--background-color-notice-subtle: #eaecf0;
+@--background-color-notice-subtle--dark: #0c281a;
+@--background-color-warning-subtle: #fdf2d5;
+@--background-color-warning-subtle--dark: #2d2c2b;
+@--color-notice: #202122;
+@--color-notice--dark: #a0a0a0;
 
 /* 설명 : secondary (옅음), tertiary (더 옅음) */
 /* new colors */
 @--color-text-base: #000000;
 @--color-text-base--dark: rgb(221, 221, 221);
 @--color-text-secondary: #202122;
-@--color-text-secondary--dark: rgb(160, 160, 160);
+@--color-text-secondary--dark: #a0a0a0;
 @--color-text-tertiary: #c9c9c9;
 @--color-text-tertiary--dark: rgb(71, 71, 71);
 
@@ -58,6 +65,9 @@
 @--color-border-secondary--dark: rgb(72, 78, 81);
 @--color-border-tertiary: #eaecf0;
 @--color-border-tertiary--dark: rgb(53, 58, 60);
+@--border-color-warning: @--color-gray;
+@--border-color-warning--dark: @--color-gray;
+
 /* links */
 @--color-link-base: #0645ad;
 @--color-link-base--dark: rgb(138, 180, 248);
@@ -148,8 +158,10 @@
     /* default - background */
     --background-color-interactive-subtle: @--background-color-interactive-subtle;
 
-    /* default - text */
-
+    /* message and warning */
+    --background-color-warning-subtle: @--background-color-interactive-subtle;
+    --border-color-warning: @--border-color-warning;
+    --color-notice: @--color-notice;
 
     /* custom */
     --color-border-toc-inner: @--color-border-secondary;
@@ -199,6 +211,12 @@
 
     /* default - background */
     --background-color-interactive-subtle: @--background-color-interactive-subtle--dark;
+
+    /* message and warning */
+    --background-color-warning-subtle: @--background-color-warning-subtle--dark;
+    --border-color-warning: @--border-color-warning;
+    --color-notice: @--color-notice--dark;
+
 
     /* custom */
     --color-border-toc-inner: @--color-border-tertiary--dark;

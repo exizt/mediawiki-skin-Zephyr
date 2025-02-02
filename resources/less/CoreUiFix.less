@@ -48,6 +48,7 @@ body.ns-special {
     &.mw-special-Version {
 
         @media ( min-width: @width-breakpoint-tablet ) {
+            /* wide 폭일 때 - 예시 - 720px 이상 */
             /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
             .mw-version-ext-authors {
                 min-width: 10em;
@@ -56,6 +57,7 @@ body.ns-special {
         }
 
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
+            /* middle 폭일 때 - 예시 - 720px 이하 */
             /* '특수:버전' 문서에서 테이블의 responsive fix */
             table.wikitable {
                 display: block;
