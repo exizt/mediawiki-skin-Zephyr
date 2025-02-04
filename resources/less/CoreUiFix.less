@@ -17,11 +17,13 @@ body.ns-special, body.action-edit {
 
 
 /* *** '특수 문서'에 대한 인터페이스 보정 *** */
-body.ns-special {
-    line-height: 1.6; /* 기본값 0.875rem */
+body.skin-zephyr.ns-special {
+    .mw-body {
+        line-height: 1.6;
+    }
 
-    /* '특수:특수문서', '특수:버전'의 소제목의 상단 여백 */
-    &.ns-special.mw-special-Specialpages, &.mw-special-Version {
+    /* '특수:특수문서' 소제목 상단 여백 */
+    &.mw-special-Specialpages {
         .mw-body-content > h2 {
             margin-top: 1em;
         }
@@ -46,6 +48,10 @@ body.ns-special {
 
     /* '특수:버전' 문서 */
     &.mw-special-Version {
+        /* '특수:버전'의 소제목 상단 여백 */
+        .mw-body-content > h2 {
+            margin-top: 1em;
+        }
 
         @media ( min-width: @width-breakpoint-tablet ) {
             /* wide 폭일 때 - 예시 - 720px 이상 */
@@ -172,34 +178,12 @@ body.ns-special.mw-special-Recentchangeslinked {
 /* *** 색상 등과 관련되어서 *** */
 body.skin-zephyr {
     .mw-body {
-        /* wikitable */
-        .wikitable {
-            background-color: inherit;
-            color: inherit;
-
-            th {
-                background-color: @color-bg-wikitable-heading;
-                color: @color-text-base;
-            }
-            > tr > th, > tr > td, > * > tr > th, > * > tr > td {
-                border-color: @color-border-secondary;
-            }
-        }
-
         /* pre 태그 */
         pre {
             background-color: @color-bg-tertiary;
             color: inherit;
             border-color: @color-border-tertiary;
             border-radius: 0.5em;
-        }
-
-        /* 본문 하단의 카테고리 부분 */
-        .catlinks {
-            /*background-color: @color-bg-tertiary;*/
-            background-color: inherit;
-            border-color: @color-border-secondary;
-            font-size: @font-size-small;
         }
 
         /* '로그인'에서 버튼, 최근 바뀜의 이름공간/태그필터 등의 select, input */
@@ -511,5 +495,34 @@ body.skin-zephyr {
             color: @color-text-base;
             border-color: #9d9fa3; /* #eaecf0 */
         }
+    }
+}
+
+
+/* wikitable */
+body.skin-zephyr .mw-body {
+    /* wikitable: 본문 내의 표 */
+    .wikitable {
+        background-color: inherit;
+        color: inherit;
+
+        th {
+            background-color: @color-bg-wikitable-heading;
+            color: @color-text-base;
+        }
+        > tr > th, > tr > td, > * > tr > th, > * > tr > td {
+            border-color: @color-border-secondary;
+        }
+        @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
+            border-color: @color-bg-base;
+        }
+    }
+
+    /* catlinks: 본문/분류 하단의 분류 영역 */
+    .catlinks {
+        /*background-color: @color-bg-tertiary;*/
+        background-color: inherit;
+        border-color: @color-border-secondary;
+        font-size: @font-size-small;
     }
 }
