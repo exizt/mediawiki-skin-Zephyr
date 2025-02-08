@@ -150,20 +150,20 @@ body.skin-zephyr.ns-special {
 
 
 /* ***** 극단적으로 작은 화면에 대한 보정 ***** */
-/* 폭 280px를 최소의 마지노선으로 보고 있음. */
-/* 매우 작은 사이즈에 대해 특수하게 fix하는 부분 */
+// 폭 280px를 최소의 마지노선으로 보고 있음.
+// 매우 작은 사이즈에 대해 특수하게 fix하는 부분
 @media screen and (max-width: 300px) {
     // '최근 목록', '주시목록 최근 바뀜', '가리키는 글의 최근 바뀜' 등에서 화살표가 나타날 수 있는 공간. 15px 정도인데, 공간 아끼려고..
     .mw-enhancedchanges-arrow-space {
-        width: 0; /* 15px인데, 아끼려고.. */
+        width: 0; // 15px인데, 아끼려고..
     }
 }
 
 /* 가리키는 글의 최근 바뀜 */
 body.ns-special.mw-special-Recentchangeslinked {
-    /* 380 이하의 매우 작은 화면에서 깨지는 것 보정 */
+    // 380 이하의 매우 작은 화면에서 깨지는 것 보정
     @media screen and (max-width: 380px) {
-        /* 가리키는 글의 최근 바뀜 - 문서이름 */
+        // 가리키는 글의 최근 바뀜 - 문서이름
         .mw-recentchanges-table .targetForm .mw-input input[name="target"]{
             width: 100%;
         }
@@ -206,287 +206,283 @@ body.skin-zephyr {
     }
 }
 
-/* dark 모드에서만 보정해도 될 경우 */
-:root[data-theme='dark'] {
-    body.skin-zephyr {
-        // '특수:검색'문서에서 탭 부분
-        .mw-search-profile-tabs {
-            background-color: @color-bg-tertiary;
-        }
+// dark 모드에서만 보정해도 될 경우
+:root[data-theme='dark'] body.skin-zephyr {
+    // '특수:검색'문서에서 탭 부분
+    .mw-search-profile-tabs {
+        background-color: @color-bg-tertiary;
+    }
 
-        // '특수:검색'문서에서 고급 탭의 옵션
-        #mw-searchoptions {
-            background-color: @color-bg-tertiary;
-        }
+    // '특수:검색'문서에서 고급 탭의 옵션
+    #mw-searchoptions {
+        background-color: @color-bg-tertiary;
+    }
 
-        .search-types .current a {
-            color: @color-link-base;
-        }
+    .search-types .current a {
+        color: @color-link-base;
+    }
 
-        // 상단 검색창에서 입력시 나타나는 연관 문서 목록
-        .suggestions {
-            .suggestions-results {
+    // 상단 검색창에서 입력시 나타나는 연관 문서 목록
+    .suggestions {
+        .suggestions-results {
+            background-color: var(--background-color-base);
+            color: @color-text-base;
+        }
+        a.mw-searchSuggest-link, a.mw-searchSuggest-link:hover, a.mw-searchSuggest-link:active, a.mw-searchSuggest-link:focus {
+            color: @color-text-base;
+        }
+        // '다음 어구를 포함하는 문서 검색'
+        .suggestions-special {
+            background-color: var(--background-color-base);
+            color: @color-text-base;
+
+            .special-query {
+                color: @color-text-base;
+            }
+        }
+        // 목록 중 각 하나
+        .suggestions-result {
+            color: @color-text-base;
+        }
+        // 목록 중 커서가 닿았을 때
+        .suggestions-result-current {
+            background-color: #223c71;
+        }
+    }
+
+    // .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+    //     background-color: inherit;
+    // }
+
+    // '특수:검색'문서에서 검색어에서 하단에 나타나는 연관 문서 목록
+    .oo-ui-menuSelectWidget {
+        background-color: var(--background-color-base);
+        &.oo-ui-optionWidget-highlighted {
+            background-color: var(--color-bg-secondary);
+        }
+    }
+
+    // oo-ui에서 select/input 밑에 나오는 목록
+    .oo-ui-menuSelectWidget, .oo-ui-menuOptionWidget {
+        &.oo-ui-optionWidget {
+            background-color: var(--background-color-base);
+            color: inherit;
+        }
+        &.oo-ui-optionWidget-highlighted {
+            background-color: var(--color-bg-secondary);
+        }
+    }
+
+    // oo-ui에서 select의 ui를 대체하는 요소
+    .oo-ui-dropdownWidget, .oo-ui-dropdownInputWidget {
+        &.oo-ui-widget-enabled {
+            .oo-ui-dropdownWidget-handle {
                 background-color: var(--background-color-base);
                 color: @color-text-base;
             }
-            a.mw-searchSuggest-link, a.mw-searchSuggest-link:hover, a.mw-searchSuggest-link:active, a.mw-searchSuggest-link:focus {
-                color: @color-text-base;
-            }
-            // '다음 어구를 포함하는 문서 검색'
-            .suggestions-special {
-                background-color: var(--background-color-base);
-                color: @color-text-base;
-
-                .special-query {
-                    color: @color-text-base;
+            &.oo-ui-dropdownWidget-open {
+                .oo-ui-dropdownWidget-handle {
+                    background-color: @color-bg-secondary;
                 }
             }
-            // 목록 중 각 하나
-            .suggestions-result {
-                color: @color-text-base;
-            }
-            // 목록 중 커서가 닿았을 때
-            .suggestions-result-current {
-                background-color: #223c71;
+        }
+        &.oo-ui-widget-disabled {
+            background-color: @color-bg-secondary;
+            .oo-ui-dropdownWidget-handle {
+                background-color: inherit;
+                color: @color-text-secondary;
+                text-shadow: none;
             }
         }
+    }
+    .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
+        background-color: var(--background-color-base);
+    }
 
-        /*
-        .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+    .oo-ui-actionFieldLayout-button {
+        background-color: @color-bg-secondary;
+        .oo-ui-buttonElement-button {
             background-color: inherit;
+            color: @color-text-base;
         }
-        */
+    }
 
-        // '특수:검색'문서에서 검색어에서 하단에 나타나는 연관 문서 목록
-        .oo-ui-menuSelectWidget {
+    .oo-ui-textInputWidget .oo-ui-inputWidget-input {
+        color: @color-text-base;
+    }
+
+    // '특수:활동적인사용자'문서의 사용자 표시 input 등
+    .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled {
+        background-color: inherit;
+    }
+
+    // 최근 바뀜 - 화면 우측의 '범례' 박스
+    .mw-changeslist-legend {
+        background-color: var(--background-color-base);
+    }
+
+    // 최근 바뀜 - 이름공간, 태그필터 등의 select, input 색상
+    .mw-input {
+        select, input {
             background-color: var(--background-color-base);
-            &.oo-ui-optionWidget-highlighted {
-                background-color: var(--color-bg-secondary);
-            }
+            color: var(--color-text-base);
         }
+    }
 
-        // oo-ui에서 select/input 밑에 나오는 목록
-        .oo-ui-menuSelectWidget, .oo-ui-menuOptionWidget {
-            &.oo-ui-optionWidget {
-                background-color: var(--background-color-base);
-                color: inherit;
-            }
-            &.oo-ui-optionWidget-highlighted {
-                background-color: var(--color-bg-secondary);
-            }
+    // 파일 상세 페이지의 헤더 탭
+    #filetoc {
+        background-color: @color-bg-tertiary;
+    }
+
+    // '계정 만들기'에서 우측의 텍스트
+    .mw-number-text {
+        color: inherit;
+        h3 {
+            color: @color-text-secondary;
         }
+    }
+    // '새 파일 목록'문서에서 날짜를 선택하는 요소
+    .mw-widget-dateInputWidget-handle {
+        background-color: @color-bg-secondary;
+    }
 
-        // oo-ui에서 select의 ui를 대체하는 요소
-        .oo-ui-dropdownWidget, .oo-ui-dropdownInputWidget {
-            &.oo-ui-widget-enabled {
-                .oo-ui-dropdownWidget-handle {
+    // .mw-widget-dateInputWidget-calendar {
+    //    background-color: @color-bg-secondary;
+    // }
+    .mw-widget-calendarWidget {
+        background-color: @color-bg-secondary;
+    }
+    .mw-widget-calendarWidget-day {
+        color: @color-text-base;
+    }
+    .mw-widget-calendarWidget-day-additional {
+        color: @color-text-secondary;
+    }
+
+    .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+        color: @color-text-base;
+    }
+
+    &.ns-special {
+        .mw-body-content {
+            table {
+                // '문자열 찾아 바꾸기'문서의 입력 textarea
+                textarea {
                     background-color: var(--background-color-base);
                     color: @color-text-base;
                 }
-                &.oo-ui-dropdownWidget-open {
-                    .oo-ui-dropdownWidget-handle {
-                        background-color: @color-bg-secondary;
-                    }
+
+                // '문자 역사 합치기'
+                input#target, input#dest {
+                    background-color: var(--background-color-base);
+                    color: @color-text-base;
+                    border: 1px solid @color-border-secondary;
                 }
             }
-            &.oo-ui-widget-disabled {
+
+            // '문자열 찾아 바꾸기'문서의 옵션
+            .ext-replacetext-searchoptions {
                 background-color: @color-bg-secondary;
-                .oo-ui-dropdownWidget-handle {
-                    background-color: inherit;
-                    color: @color-text-secondary;
-                    text-shadow: none;
-                }
-            }
-        }
-        .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
-            background-color: var(--background-color-base);
-        }
-
-        .oo-ui-actionFieldLayout-button {
-            background-color: @color-bg-secondary;
-            .oo-ui-buttonElement-button {
-                background-color: inherit;
-                color: @color-text-base;
-            }
-        }
-
-        .oo-ui-textInputWidget .oo-ui-inputWidget-input {
-            color: @color-text-base;
-        }
-
-        // '특수:활동적인사용자'문서의 사용자 표시 input 등
-        .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled {
-            background-color: inherit;
-        }
-
-        // 최근 바뀜 - 화면 우측의 '범례' 박스
-        .mw-changeslist-legend {
-            background-color: var(--background-color-base);
-        }
-
-        // 최근 바뀜 - 이름공간, 태그필터 등의 select, input 색상
-        .mw-input {
-            select, input {
-                background-color: var(--background-color-base);
-                color: var(--color-text-base);
-            }
-        }
-
-        // 파일 상세 페이지의 헤더 탭
-        #filetoc {
-            background-color: @color-bg-tertiary;
-        }
-
-        // '계정 만들기'에서 우측의 텍스트
-        .mw-number-text {
-            color: inherit;
-            h3 {
                 color: @color-text-secondary;
             }
         }
-        // '새 파일 목록'문서에서 날짜를 선택하는 요소
-        .mw-widget-dateInputWidget-handle {
-            background-color: @color-bg-secondary;
-        }
-        /*
-        .mw-widget-dateInputWidget-calendar {
-            background-color: @color-bg-secondary;
-        }*/
-        .mw-widget-calendarWidget {
-            background-color: @color-bg-secondary;
-        }
-        .mw-widget-calendarWidget-day {
-            color: @color-text-base;
-        }
-        .mw-widget-calendarWidget-day-additional {
-            color: @color-text-secondary;
-        }
 
-        .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
-            color: @color-text-base;
-        }
-
-        &.ns-special {
-            .mw-body-content {
-                table {
-                    // '문자열 찾아 바꾸기'문서의 입력 textarea
-                    textarea {
-                        background-color: var(--background-color-base);
-                        color: @color-text-base;
-                    }
-
-                    // '문자 역사 합치기'
-                    input#target, input#dest {
-                        background-color: var(--background-color-base);
-                        color: @color-text-base;
-                        border: 1px solid @color-border-secondary;
-                    }
-                }
-
-                // '문자열 찾아 바꾸기'문서의 옵션
-                .ext-replacetext-searchoptions {
-                    background-color: @color-bg-secondary;
-                    color: @color-text-secondary;
-                }
-            }
-
-            &.mw-special-ApiSandbox {
-                // 'API 실험실'
-                .mw-apisandbox-toolbar {
-                    background-color: @color-bg-secondary;
-                    color: @color-text-secondary;
-                }
-            }
+        &.mw-special-ApiSandbox {
             // 'API 실험실'
-            .oo-ui-outlineOptionWidget {
+            .mw-apisandbox-toolbar {
                 background-color: @color-bg-secondary;
-                color: @color-link-base;
-                &:hover {
-                    background-color: @color-bg-tertiary;
-                }
-            }
-            // 환경 설정 - 하단 버튼 영역
-            #preferences .mw-htmlform-submit-buttons {
-                background-color: var(--background-color-base);
-                color: @color-link-base;
-            }
-            .oo-ui-tabSelectWidget-framed {
-                background-color: @color-bg-secondary;
-            }
-            .oo-ui-optionWidget-selected {
-                background-color: @color-bg-secondary;
-                color: @color-text-base;
+                color: @color-text-secondary;
             }
         }
-
-        ol.references li:target, sup.reference:target {
-            background-color: @color-bg-tertiary;
+        // 'API 실험실'
+        .oo-ui-outlineOptionWidget {
+            background-color: @color-bg-secondary;
+            color: @color-link-base;
+            &:hover {
+                background-color: @color-bg-tertiary;
+            }
         }
-
-        // math 확장 기능 연관
-        .mwe-math-fallback-image-inline,
-        .mwe-math-fallback-image-display {
-            filter: hue-rotate(180deg) invert(1);
-        }
-
-        // page history
-        #pagehistory li.selected {
-            background-color: @color-bg-tertiary;
-            color: inherit;
-            outline: 1px dashed #a2a9b1;
-        }
-
-        // redirect arrow
-        .mw-content-ltr .redirectText li {
-            filter: hue-rotate(180deg) invert(1);
-        }
-
-        // '삭제하려는 문서가..' 알림 블럭
-        .mw-message-box-warning {
-            background-color: @color-bg-tertiary;
-            border-color: @color-link-base;
-        }
-        .mw-message-box {
+        // 환경 설정 - 하단 버튼 영역
+        #preferences .mw-htmlform-submit-buttons {
+            background-color: var(--background-color-base);
             color: @color-link-base;
         }
-        // 위키에디터에서 링크 넣기 등의 도구
-        .ui-widget-content {
-            /*border-color: */
-            background: @color-bg-tertiary;
+        .oo-ui-tabSelectWidget-framed {
+            background-color: @color-bg-secondary;
+        }
+        .oo-ui-optionWidget-selected {
+            background-color: @color-bg-secondary;
             color: @color-text-base;
         }
-        .ui-widget-header {
-            background: @color-bg-secondary;
-            color: @color-text-base;
-        }
-        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-            background: @color-bg-secondary;
-            color: @color-text-secondary;
-        }
-        .ui-widget-overlay {
-            background: @color-bg-secondary;
-        }
-        // 텍스트 비교
-        .diff-addedline {
-            border-color: #6d8ba7; /* #a3d3ff */
-            .diffchange {
-                background: #2f363a;
-            }
+    }
 
+    ol.references li:target, sup.reference:target {
+        background-color: @color-bg-tertiary;
+    }
+
+    // math 확장 기능 연관
+    .mwe-math-fallback-image-inline,
+    .mwe-math-fallback-image-display {
+        filter: hue-rotate(180deg) invert(1);
+    }
+
+    // page history
+    #pagehistory li.selected {
+        background-color: @color-bg-tertiary;
+        color: inherit;
+        outline: 1px dashed #a2a9b1;
+    }
+
+    // redirect arrow
+    .mw-content-ltr .redirectText li {
+        filter: hue-rotate(180deg) invert(1);
+    }
+
+    // '삭제하려는 문서가..' 알림 블럭
+    .mw-message-box-warning {
+        background-color: @color-bg-tertiary;
+        border-color: @color-link-base;
+    }
+    .mw-message-box {
+        color: @color-link-base;
+    }
+    // 위키에디터에서 링크 넣기 등의 도구
+    .ui-widget-content {
+        /*border-color: */
+        background: @color-bg-tertiary;
+        color: @color-text-base;
+    }
+    .ui-widget-header {
+        background: @color-bg-secondary;
+        color: @color-text-base;
+    }
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+        background: @color-bg-secondary;
+        color: @color-text-secondary;
+    }
+    .ui-widget-overlay {
+        background: @color-bg-secondary;
+    }
+    // 텍스트 비교
+    .diff-addedline {
+        border-color: #6d8ba7; /* #a3d3ff */
+        .diffchange {
+            background: #2f363a;
         }
-        .diff-deletedline {
-            border-color: #928359; /* #ffe49c */
-            .diffchange {
-                background: #403c31;
-            }
+
+    }
+    .diff-deletedline {
+        border-color: #928359; /* #ffe49c */
+        .diffchange {
+            background: #403c31;
         }
-        .diff-context {
-            /*background: #242525;*/
-            background: var(--background-color-base);
-            /*color: #ddeaf7;*/
-            color: @color-text-base;
-            border-color: #9d9fa3; /* #eaecf0 */
-        }
+    }
+    .diff-context {
+        /*background: #242525;*/
+        background: var(--background-color-base);
+        /*color: #ddeaf7;*/
+        color: @color-text-base;
+        border-color: #9d9fa3; /* #eaecf0 */
     }
 }
 
