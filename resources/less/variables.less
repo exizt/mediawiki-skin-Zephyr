@@ -1,10 +1,29 @@
-/* colors */
+// --- text colors palette
+@--color-notice: #202122;
+@--color-notice--dark: #a0a0a0;
+
+
+// --- background color palette
+@--background-color-base: #ffffff;
+// @--background-color-base--dark: #252627;
+@--background-color-base--dark: #202124;
+@--background-color-interactive: #eaecf0;
+@--background-color-interactive--dark:#3b3b3b;
+@--background-color-interactive-subtle: #f8f9fa;
+@--background-color-interactive-subtle--dark: #3b3b3b;
 @--background-color-warning: #0c281a;
-@--background-color-warning-dark: #0c281a;
+@--background-color-warning--dark: #0c281a;
+@--background-color-warning-subtle: #fdf2d5;
+@--background-color-warning-subtle--dark: #2d2c2b;
 @--background-color-article: #ffffff;
-@--background-color-article-dark: rgb(37, 38, 39);
+@--background-color-article--dark: rgb(37, 38, 39);
 @--background-color-thumb: #0c281a;
-@--background-color-thumb-dark: #0c281a;
+@--background-color-thumb--dark: #0c281a;
+@--background-color-notice-subtle: #eaecf0;
+@--background-color-notice-subtle--dark: #0c281a;
+
+
+/* colors */
 @--color-thumb: #85adb9;
 @--color-thumb-dark: #85adb9;
 @--color-gray: #c9c9c9;
@@ -19,21 +38,6 @@
 // @--color-link--visited-dark: rgb(197, 138, 249);
 // @--color-link--visited-dark: rgb(138, 149, 249);
 
-/* background */
-@--background-color-base: #ffffff;
-@--background-color-base-dark: rgb(37, 38, 39);
-@--background-color-interactive: #eaecf0;
-@--background-color-interactive--dark:#3b3b3b;
-@--background-color-interactive-subtle: #f8f9fa;
-@--background-color-interactive-subtle--dark: #3b3b3b;
-
-/* message and warning */
-@--background-color-notice-subtle: #eaecf0;
-@--background-color-notice-subtle--dark: #0c281a;
-@--background-color-warning-subtle: #fdf2d5;
-@--background-color-warning-subtle--dark: #2d2c2b;
-@--color-notice: #202122;
-@--color-notice--dark: #a0a0a0;
 
 /* 설명 : secondary (옅음), tertiary (더 옅음) */
 /* new colors */
@@ -48,8 +52,8 @@
 @--color-bg-wikitable-heading: #eaecf0;
 @--color-bg-wikitable-heading--dark: rgb(37, 41, 43);
 /* bg */
-@--color-bg-base: #ffffff;
-@--color-bg-base--dark: rgb(32, 33, 36);
+// @--color-bg-base: #ffffff;
+// @--color-bg-base--dark: #202124;
 // @--color-bg-base--dark: rgb(27, 30, 31);
 // @--color-bg-base--dark: rgb(37, 38, 39);
 @--color-bg-secondary: #eaecf0;
@@ -84,10 +88,9 @@
 
 
 /* color var */
-@background-color-warning: var(--background-color-warning);
-@background-color-base: var(--background-color-base);
-@background-color-article: var(--background-color-article);
-@background-color-thumb: var(--background-color-thumb);
+// @background-color-base: var(--background-color-base);
+// @background-color-article: var(--background-color-article);
+// @background-color-thumb: var(--background-color-thumb);
 @color-thumb: var(--color-thumb);
 @color-gray: var(--color-gray);
 @color-gray-2: var(--color-gray-2);
@@ -100,7 +103,7 @@
 @color-text-secondary: var(--color-text-secondary);
 @color-text-tertiary: var(--color-text-tertiary);
 @color-bg-wikitable-heading: var(--color-bg-wikitable-heading);
-@color-bg-base: var(--color-bg-base);
+// @color-bg-base: var(--color-bg-base);
 @color-bg-secondary: var(--color-bg-secondary);
 @color-bg-tertiary: var(--color-bg-tertiary);
 @color-border-base: var(--color-border-base);
@@ -128,6 +131,56 @@
 
 
 :root {
+    /* new colors */
+    --color-border-base: @--color-border-base;
+    --color-border-secondary: @--color-border-secondary;
+    --color-border-tertiary: @--color-border-tertiary;
+
+    /* message and warning */
+    --border-color-warning: @--border-color-warning;
+
+    /* custom */
+    --color-border-toc-inner: @--color-border-secondary;
+}
+:root[data-theme='dark'] {
+
+    /* new colors */
+    --color-border-base: @--color-border-base--dark;
+    --color-border-secondary: @--color-border-secondary--dark;
+    --color-border-tertiary: @--color-border-tertiary--dark;
+
+    /* message and warning */
+    --border-color-warning: @--border-color-warning;
+
+    /* custom */
+    --color-border-toc-inner: @--color-border-tertiary--dark;
+}
+
+// ---------- text color set ----------
+:root {
+    --color-base: @--color-text-base;
+    // --color-base-fixed
+    // --color-base--hover
+    // --color-emphasized
+    // --color-subtle
+    // --color-placeholder
+    // --color-disabled
+    // --color-disabled-emphasized
+    // --color-inverted
+    // --color-inverted-fixed
+    // --color-progressive
+    // --color-destructive
+    // --color-visited
+    // --color-error
+    // --color-warning
+    // --color-success
+    --color-notice: @--color-notice;
+    // --color-icon-error
+    // --color-content-added
+    // --color-base-subtle : deprecated
+    // --color-link-red
+
+    // ------- customization
     --color-thumb : @--color-thumb;
     --color-gray : @--color-gray;
     --color-gray-2 : @--color-gray-2;
@@ -135,38 +188,28 @@
     // --color-link--active : @--color-link--active;
     // --color-link--visited : @--color-link--visited;
 
-    /* new colors */
-    --color-base: @--color-text-base;
     --color-text-base: @--color-text-base;
     --color-text-secondary: @--color-text-secondary;
     --color-text-tertiary: @--color-text-tertiary;
-    --color-border-base: @--color-border-base;
-    --color-border-secondary: @--color-border-secondary;
-    --color-border-tertiary: @--color-border-tertiary;
     --color-link-base: @--color-link-base;
     --color-link-base--active: @--color-link-base--active;
     --color-link-base--visited: @--color-link-base--visited;
     --color-link-new: @--color-link-new;
     --color-link-new--visited: @--color-link-new--visited;
 
-    /* message and warning */
-    --border-color-warning: @--border-color-warning;
-    --color-notice: @--color-notice;
-
-    /* custom */
-    --color-border-toc-inner: @--color-border-secondary;
     --color-text-search-input: @--color-text-base;
     // --color-text-code: #e83e8c;
     --color-text-code: #0c0d0e;
-    // --color-bg-code: @--color-bg-tertiary;
-    --color-bg-code: rgb(227, 230, 232);
     --color-text-code--sof: #0c0d0e;
-    --color-bg-code--sof: rgb(227, 230, 232);
-    --color-bg-editor-ui-toolbar: @--color-bg-tertiary;
     --color-text-editor-ui-toolbar: #222;
     --color-text-editor-ui-toolbar-secondary: #54595d;
 }
 :root[data-theme='dark'] {
+    --color-base: @--color-text-base--dark;
+    --color-notice: @--color-notice--dark;
+
+
+    // --- customization
     --color-thumb : @--color-thumb-dark;
     --color-gray : @--color-gray-dark;
     --color-gray-2 : @--color-gray-2-dark;
@@ -174,93 +217,94 @@
     // --color-link--active : @--color-link--active-dark;
     // --color-link--visited : @--color-link--visited-dark;
 
-    /* new colors */
-    --color-base: @--color-text-base--dark;
     --color-text-base: @--color-text-base--dark;
     --color-text-secondary: @--color-text-secondary--dark;
     --color-text-tertiary: @--color-text-tertiary--dark;
-    --color-border-base: @--color-border-base--dark;
-    --color-border-secondary: @--color-border-secondary--dark;
-    --color-border-tertiary: @--color-border-tertiary--dark;
     --color-link-base: @--color-link-base--dark;
     --color-link-base--active: @--color-link-base--active--dark;
     --color-link-base--visited: @--color-link-base--visited--dark;
     --color-link-new: @--color-link-new--dark;
     --color-link-new--visited: @--color-link-new--visited--dark;
 
-    /* message and warning */
-    --border-color-warning: @--border-color-warning;
-    --color-notice: @--color-notice--dark;
-
-
-    /* custom */
-    --color-border-toc-inner: @--color-border-tertiary--dark;
     --color-text-search-input: @--color-text-base--dark;
     --color-text-code: rgb(230, 237, 243);
-    --color-bg-code: rgba(110, 118, 129, 0.4);
     --color-text-code--sof: #0c0d0e;
-    --color-bg-code--sof: rgb(227, 230, 232);
-    --color-bg-editor-ui-toolbar: rgba(104, 104, 104, 0.4);
     --color-text-editor-ui-toolbar: @--color-text-base--dark;
     --color-text-editor-ui-toolbar-secondary: @--color-text-base--dark;
     --color-base--hover: @--color-text-base--dark;
 }
 
-/* background color set */
+
+
+// ---------- background color set ----------
 :root {
-    --background-color-warning: @--background-color-warning;
     --background-color-base : @--background-color-base;
+    // --background-color-base-fixed
+    // --background-color-neutral
+    // --background-color-neutral-subtle
+    --background-color-interactive: @--background-color-interactive;
+    // --background-color-interactive--hover
+    // --background-color-interactive--active
+    --background-color-interactive-subtle: @--background-color-interactive-subtle;
+    // --background-color-interactive-subtle--hover
+    // --background-color-interactive-subtle--active
+    // --background-color-disabled
+    // --background-color-disabled-subtle
+    // --background-color-inverted
+    // --background-color-progressive
+    // --background-color-progressive--hover
+    // --background-color-progressive--active
+    // --background-color-progressive--focus
+    // --background-color-progressive-subtle
+    // --background-color-progressive-subtle--hover
+    // --background-color-progressive-subtle--active
+    // --background-color-destructive
+    // --background-color-destructive--hover
+    // --background-color-destructive--active
+    // --background-color-destructive--focus
+    // --background-color-destructive-subtle
+    // --background-color-error
+    --background-color-warning: @--background-color-warning;
+    --background-color-warning-subtle: @--background-color-interactive-subtle; // message and warning
+    // --background-color-success
+    // --background-color-notice
     --background-color-article : @--background-color-article;
     --background-color-thumb : @--background-color-thumb;
 
-    /* new colors */
+    // customization
     --color-bg-wikitable-heading: @--color-bg-wikitable-heading;
-    --color-bg-base: @--color-bg-base;
+    // --color-bg-base: @--color-bg-base;
     --color-bg-secondary: @--color-bg-secondary;
     --color-bg-tertiary: @--color-bg-tertiary;
 
-    /* default - background */
-    --background-color-interactive-subtle: @--background-color-interactive-subtle;
-    --background-color-interactive: @--background-color-interactive;
-
-    /* message and warning */
-    --background-color-warning-subtle: @--background-color-interactive-subtle;
-
-    /* custom */
     --color-border-toc-inner: @--color-border-secondary;
     --color-bg-toc-inner: @--color-bg-tertiary;
-    --color-bg-dropdown: @--color-bg-base;
-    --color-bg-search-input: @--color-bg-base;
+    --color-bg-dropdown: @--background-color-base;
+    --color-bg-search-input: @--background-color-base;
     // --color-bg-code: @--color-bg-tertiary;
     --color-bg-code: rgb(227, 230, 232);
     --color-bg-code--sof: rgb(227, 230, 232);
     --color-bg-editor-ui-toolbar: @--color-bg-tertiary;
 }
 :root[data-theme='dark'] {
-    --background-color-warning: @--background-color-warning-dark;
-    --background-color-base : @--background-color-base-dark;
-    --background-color-article : @--background-color-article-dark;
-    --background-color-thumb : @--background-color-thumb-dark;
+    --background-color-base : @--background-color-base--dark;
+    --background-color-interactive: @--background-color-interactive--dark;
+    --background-color-interactive-subtle: @--background-color-interactive-subtle--dark;
+    --background-color-warning: @--background-color-warning--dark;
+    --background-color-warning-subtle: @--background-color-warning-subtle--dark;
+    --background-color-article : @--background-color-article--dark;
+    --background-color-thumb : @--background-color-thumb--dark;
 
-    /* new colors */
+    // customization
     --color-bg-wikitable-heading: @--color-bg-wikitable-heading--dark;
-    --color-bg-base: @--color-bg-base--dark;
+    // --color-bg-base: @--color-bg-base--dark;
     --color-bg-secondary: @--color-bg-secondary--dark;
     --color-bg-tertiary: @--color-bg-tertiary--dark;
 
-    /* default - background */
-    --background-color-interactive-subtle: @--background-color-interactive-subtle--dark;
-    --background-color-interactive: @--background-color-interactive--dark;
-
-    /* message and warning */
-    --background-color-warning-subtle: @--background-color-warning-subtle--dark;
-
-    /* custom */
     --color-bg-toc-inner: @--color-bg-tertiary--dark;
     --color-bg-dropdown: @--color-bg-secondary--dark;
-    --color-bg-search-input: @--color-bg-base--dark;
+    --color-bg-search-input: @--background-color-base--dark;
     --color-bg-code: rgba(110, 118, 129, 0.4);
-    --color-text-code--sof: #0c0d0e;
     --color-bg-code--sof: rgb(227, 230, 232);
     --color-bg-editor-ui-toolbar: rgba(104, 104, 104, 0.4);
 }

@@ -1,5 +1,5 @@
 @import 'mediawiki.skin.variables';
-@import 'variables.less';
+@import '/less/variables.less';
 
 /* ***** 기본 기능 인터페이스에 대한 보정 ***** */
 
@@ -110,7 +110,7 @@ body.skin-zephyr.ns-special {
     .wikiEditor-ui .wikiEditor-ui-text textarea {
         font-size: @font-size-medium;
         color: @color-text-base;
-        background: @color-bg-base;
+        background: var(--background-color-base);
     }
     .wikiEditor-ui-toolbar {
         background: var(--color-bg-editor-ui-toolbar);
@@ -226,7 +226,7 @@ body.skin-zephyr {
         // 상단 검색창에서 입력시 나타나는 연관 문서 목록
         .suggestions {
             .suggestions-results {
-                background-color: @color-bg-base;
+                background-color: var(--background-color-base);
                 color: @color-text-base;
             }
             a.mw-searchSuggest-link, a.mw-searchSuggest-link:hover, a.mw-searchSuggest-link:active, a.mw-searchSuggest-link:focus {
@@ -234,7 +234,7 @@ body.skin-zephyr {
             }
             // '다음 어구를 포함하는 문서 검색'
             .suggestions-special {
-                background-color: @color-bg-base;
+                background-color: var(--background-color-base);
                 color: @color-text-base;
 
                 .special-query {
@@ -259,7 +259,7 @@ body.skin-zephyr {
 
         // '특수:검색'문서에서 검색어에서 하단에 나타나는 연관 문서 목록
         .oo-ui-menuSelectWidget {
-            background-color: @color-bg-base;
+            background-color: var(--background-color-base);
             &.oo-ui-optionWidget-highlighted {
                 background-color: var(--color-bg-secondary);
             }
@@ -268,7 +268,7 @@ body.skin-zephyr {
         // oo-ui에서 select/input 밑에 나오는 목록
         .oo-ui-menuSelectWidget, .oo-ui-menuOptionWidget {
             &.oo-ui-optionWidget {
-                background-color: @color-bg-base;
+                background-color: var(--background-color-base);
                 color: inherit;
             }
             &.oo-ui-optionWidget-highlighted {
@@ -280,7 +280,7 @@ body.skin-zephyr {
         .oo-ui-dropdownWidget, .oo-ui-dropdownInputWidget {
             &.oo-ui-widget-enabled {
                 .oo-ui-dropdownWidget-handle {
-                    background-color: @color-bg-base;
+                    background-color: var(--background-color-base);
                     color: @color-text-base;
                 }
                 &.oo-ui-dropdownWidget-open {
@@ -299,7 +299,7 @@ body.skin-zephyr {
             }
         }
         .oo-ui-dropdownInputWidget.oo-ui-widget-enabled {
-            background-color: @color-bg-base;
+            background-color: var(--background-color-base);
         }
 
         .oo-ui-actionFieldLayout-button {
@@ -321,13 +321,13 @@ body.skin-zephyr {
 
         // 최근 바뀜 - 화면 우측의 '범례' 박스
         .mw-changeslist-legend {
-            background-color: var(--color-bg-base);
+            background-color: var(--background-color-base);
         }
 
         // 최근 바뀜 - 이름공간, 태그필터 등의 select, input 색상
         .mw-input {
             select, input {
-                background-color: var(--color-bg-base);
+                background-color: var(--background-color-base);
                 color: var(--color-text-base);
             }
         }
@@ -371,13 +371,13 @@ body.skin-zephyr {
                 table {
                     // '문자열 찾아 바꾸기'문서의 입력 textarea
                     textarea {
-                        background-color: @color-bg-base;
+                        background-color: var(--background-color-base);
                         color: @color-text-base;
                     }
 
                     // '문자 역사 합치기'
                     input#target, input#dest {
-                        background-color: @color-bg-base;
+                        background-color: var(--background-color-base);
                         color: @color-text-base;
                         border: 1px solid @color-border-secondary;
                     }
@@ -407,7 +407,7 @@ body.skin-zephyr {
             }
             // 환경 설정 - 하단 버튼 영역
             #preferences .mw-htmlform-submit-buttons {
-                background-color: @color-bg-base;
+                background-color: var(--background-color-base);
                 color: @color-link-base;
             }
             .oo-ui-tabSelectWidget-framed {
@@ -482,7 +482,7 @@ body.skin-zephyr {
         }
         .diff-context {
             /*background: #242525;*/
-            background: @color-bg-base;
+            background: var(--background-color-base);
             /*color: #ddeaf7;*/
             color: @color-text-base;
             border-color: #9d9fa3; /* #eaecf0 */
@@ -506,7 +506,7 @@ body.skin-zephyr .mw-body {
             border-color: @color-border-secondary;
         }
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
-            border-color: @color-bg-base;
+            border-color: var(--background-color-base);
         }
     }
 

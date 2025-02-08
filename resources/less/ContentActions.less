@@ -1,6 +1,7 @@
 @import 'mediawiki.skin.variables';
-@import 'variables.less';
+@import '/less/variables.less';
 
+// actions
 .mw-portlet-viewactions {
     h3, li a {
         color: @color-text-base;
@@ -24,16 +25,14 @@
         margin: 0;
     }
 }
+// dark mode
 :root[data-theme='dark'] {
-    /* dark mode */
     .mw-portlet-viewactions {
         > h3 {
             filter: invert(0.7);
         }
     }
 }
-
-
 
 
 .mw-portlet-views {

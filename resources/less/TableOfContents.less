@@ -1,5 +1,5 @@
 @import 'mediawiki.skin.variables';
-@import 'variables.less';
+@import '/less/variables.less';
 
 #toc-sticky {
     flex: 0 0 300px;
@@ -72,8 +72,8 @@ body.ns-6 #toc-sticky {
     display: none
 }
 
+// 본문에 나타나는 기존의 TOC
 #mw-content-text #toc {
-    // 본문에 나타나는 TOC
     font-size: @font-size-small; // 기본으로 95% 로 되어있는 거 fix
     border-color: var(--color-border-toc-inner);
     background-color: var(--color-bg-toc-inner);
@@ -86,7 +86,7 @@ body.ns-6 #toc-sticky {
 
     // 번호 텍스트
     .tocnumber {
-        color: @color-text-base;
+        color: var(--color-base);
     }
 
     // 링크 및 '숨기기'(.toctogglelabel) 텍스트
