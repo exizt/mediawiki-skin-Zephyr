@@ -1,6 +1,6 @@
 {
 	"name": "Zephyr",
-	"version": "2304.5",
+	"version": "25.1",
 	"author": [
 		"[https://github.com/exizt exizt]"
 	],
@@ -9,7 +9,7 @@
 	"namemsg": "skinname-zephyr",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.39.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"ValidSkinNames": {
 		"zephyr": {
@@ -65,7 +65,6 @@
 				"content-links": true,
 				"content-media": true,
 				"content-links-external": false,
-				"interface-message-box": true,
 				"interface-category": true,
 				"toc": true
 			},
