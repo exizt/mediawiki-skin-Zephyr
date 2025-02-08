@@ -24,16 +24,16 @@ body.skin-zephyr {
     }
 
     a {
-        color: @color-link-base;
+        color: var(--color-link-base);
 
         &:visited {
-            color: @color-link-base--visited;
+            color: var(--color-link-base--visited);
         }
 
         &.new {
-            color: @color-link-new;
+            color: var(--color-link-new);
             &:visited {
-                color: @color-link-new--visited;
+                color: var(--color-link-new--visited);
             }
         }
 
@@ -45,17 +45,17 @@ body.skin-zephyr {
     div.thumbinner {
         border-color: @color-gray;
         background-color: @color-bg-tertiary;
-        color: @color-thumb;
+        color: var(--color-thumb);
         a {
-            color: @color-thumb;
+            color: var(--color-thumb);
         }
     }
     hr {
-        background-color: @color-border-secondary;
+        background-color: var(--color-border-secondary);
     }
 
     h1, h2 {
-        border-bottom-color: @color-border-secondary;
+        border-bottom-color: var(--color-border-secondary);
     }
 
     /* gallery box */

@@ -1,10 +1,14 @@
 @import 'mediawiki.skin.variables';
 @import '/less/variables.less';
 
-/* ***** 기본 기능 인터페이스에 대한 보정 ***** */
+// 기본 인터페이스에 대한 보정 css 파일
 
-/* *** 기본 기능 인터페이스에 대한 보정 *** */
-/* 특수 문서, 편집 화면 등 */
+// help 링크 숨기기
+#mw-indicator-mw-helplink {
+    display: none;
+}
+
+// 특수 문서, 편집 화면 등
 body.ns-special, body.action-edit {
     // input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지.
     .oo-ui-textInputWidget .oo-ui-inputWidget-input {
@@ -16,7 +20,7 @@ body.ns-special, body.action-edit {
 }
 
 
-/* *** '특수 문서'에 대한 인터페이스 보정 *** */
+// ======== '특수 문서' 연관 ========
 body.skin-zephyr.ns-special {
     .mw-body {
         line-height: 1.6;
@@ -33,12 +37,10 @@ body.skin-zephyr.ns-special {
     // '특수:올리기' 문서
     &.mw-special-Upload {
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
-            .mw-body-content .mw-htmlform {
-                // 파일 업로드 화면에 600px 이하에서 깨지므로 보정
-                .mw-input input[name='wpDestFile'] {
-                    width: 100%;
-                    box-sizing: border-box;
-                }
+            // 파일 업로드 화면에 600px 이하에서 깨지므로 보정
+            input#wpDestFile {
+                width: 100%;
+                box-sizing: border-box;
             }
         }
         textarea#wpUploadDescription {
@@ -102,6 +104,30 @@ body.skin-zephyr.ns-special {
             margin-bottom: 5rem; // 하단 여백 bug fix
         }
     }
+
+    // '특수:추적용 분류'
+    &.mw-special-TrackingCategories {
+        // '특수:추적용 분류'에서 테이블
+        .mw-datatable {
+            td {
+            background-color: inherit;
+            }
+            th {
+                background-color: var(--background-color-neutral);
+        }
+        }
+    }
+
+    // '특수:링크최근바뀜' (가리키는 글의 최근 바뀜)
+    &.mw-special-Recentchangeslinked {
+        // 500 이하의 매우 작은 화면에서 깨지는 것 보정
+        @media screen and (max-width: 500px) {
+            // 문서이름 input
+            .mw-recentchanges-table .targetForm .mw-input input[name="target"]{
+                width: 90%;
+            }
+        }
+    }
 }
 
 
@@ -122,7 +148,7 @@ body.skin-zephyr.ns-special {
             color: var(--color-text-editor-ui-toolbar-secondary);
         }
         .tabs span.tab a {
-            color: @color-link-base;
+            color: var(--color-link-base);
         }
     }
 
@@ -159,18 +185,6 @@ body.skin-zephyr.ns-special {
     }
 }
 
-/* 가리키는 글의 최근 바뀜 */
-body.ns-special.mw-special-Recentchangeslinked {
-    // 380 이하의 매우 작은 화면에서 깨지는 것 보정
-    @media screen and (max-width: 380px) {
-        // 가리키는 글의 최근 바뀜 - 문서이름
-        .mw-recentchanges-table .targetForm .mw-input input[name="target"]{
-            width: 100%;
-        }
-    }
-}
-
-
 /* *** 색상 등과 관련되어서 *** */
 body.skin-zephyr {
     .mw-body {
@@ -178,7 +192,7 @@ body.skin-zephyr {
         pre {
             background-color: @color-bg-tertiary;
             color: inherit;
-            border-color: @color-border-tertiary;
+            border-color: var(--color-border-tertiary);
             border-radius: 0.5em;
         }
 
@@ -193,15 +207,6 @@ body.skin-zephyr {
             input {
                 font-size: 1rem;
             }
-        }
-        // '추적용 분류'에서 테이블
-        .mw-datatable {
-            td {
-               background-color: inherit;
-            }
-            th {
-                background-color: @color-bg-wikitable-heading;
-           }
         }
     }
 }
@@ -219,7 +224,7 @@ body.skin-zephyr {
     }
 
     .search-types .current a {
-        color: @color-link-base;
+        color: var(--color-link-base);
     }
 
     // 상단 검색창에서 입력시 나타나는 연관 문서 목록
@@ -376,7 +381,7 @@ body.skin-zephyr {
                 input#target, input#dest {
                     background-color: var(--background-color-base);
                     color: @color-text-base;
-                    border: 1px solid @color-border-secondary;
+                    border: 1px solid var(--color-border-secondary);
                 }
             }
 
@@ -397,7 +402,7 @@ body.skin-zephyr {
         // 'API 실험실'
         .oo-ui-outlineOptionWidget {
             background-color: @color-bg-secondary;
-            color: @color-link-base;
+            color: var(--color-link-base);
             &:hover {
                 background-color: @color-bg-tertiary;
             }
@@ -405,7 +410,7 @@ body.skin-zephyr {
         // 환경 설정 - 하단 버튼 영역
         #preferences .mw-htmlform-submit-buttons {
             background-color: var(--background-color-base);
-            color: @color-link-base;
+            color: var(--color-link-base);
         }
         .oo-ui-tabSelectWidget-framed {
             background-color: @color-bg-secondary;
@@ -439,13 +444,13 @@ body.skin-zephyr {
     }
 
     // '삭제하려는 문서가..' 알림 블럭
-    .mw-message-box-warning {
-        background-color: @color-bg-tertiary;
-        border-color: @color-link-base;
-    }
-    .mw-message-box {
-        color: @color-link-base;
-    }
+    // .mw-message-box-warning {
+    //     background-color: @color-bg-tertiary;
+    //     border-color: var(--color-link-base);
+    // }
+    // .mw-message-box {
+    //     color: var(--color-link-base);
+    // }
     // 위키에디터에서 링크 넣기 등의 도구
     .ui-widget-content {
         /*border-color: */
@@ -484,33 +489,46 @@ body.skin-zephyr {
         color: @color-text-base;
         border-color: #9d9fa3; /* #eaecf0 */
     }
+
+    .wikiEditor-ui {
+        // 1.43 에서 추가된 '미리 보기' 버튼의 hover 색상 보정
+        .ext-WikiEditor-realtimepreview-button:hover {
+            background-color: #2f363a;
+        }
+        .ext-WikiEditor-ResizingDragBar-ew, .ext-WikiEditor-ResizingDragBar {
+            background-color: #272625;
+        }
+        .ext-WikiEditor-ResizingDragBar span {
+            background-color: #3f3e3e;
+        }
+    }
 }
 
 
-/* wikitable */
 body.skin-zephyr .mw-body {
+
     // wikitable: 본문 내의 표
     .wikitable {
         background-color: inherit;
         color: inherit;
 
         th {
-            background-color: @color-bg-wikitable-heading;
+            background-color: var(--background-color-neutral);
             color: @color-text-base;
         }
         > tr > th, > tr > td, > * > tr > th, > * > tr > td {
-            border-color: @color-border-secondary;
+            border-color: var(--color-border-secondary);
         }
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
             border-color: var(--background-color-base);
         }
     }
 
-    // catlinks: 본문/분류 하단의 분류 영역
+    // -- catlinks: 본문/분류 하단의 분류 영역
     .catlinks {
         /*background-color: @color-bg-tertiary;*/
         background-color: inherit;
-        border-color: @color-border-secondary;
+        border-color: var(--color-border-secondary);
         font-size: @font-size-small;
     }
 }

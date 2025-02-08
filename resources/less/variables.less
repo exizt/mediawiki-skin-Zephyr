@@ -7,6 +7,9 @@
 @--background-color-base: #ffffff;
 // @--background-color-base--dark: #252627;
 @--background-color-base--dark: #202124;
+@--background-color-neutral: #eaecf0;
+@--background-color-neutral--dark: #25292b;
+// @--background-color-neutral-subtle: #f8f9fa;
 @--background-color-interactive: #eaecf0;
 @--background-color-interactive--dark:#3b3b3b;
 @--background-color-interactive-subtle: #f8f9fa;
@@ -15,13 +18,15 @@
 @--background-color-warning--dark: #0c281a;
 @--background-color-warning-subtle: #fdf2d5;
 @--background-color-warning-subtle--dark: #2d2c2b;
+@--background-color-notice-subtle: #eaecf0;
+@--background-color-notice-subtle--dark: #0c281a;
 @--background-color-article: #ffffff;
 @--background-color-article--dark: rgb(37, 38, 39);
 @--background-color-thumb: #0c281a;
 @--background-color-thumb--dark: #0c281a;
-@--background-color-notice-subtle: #eaecf0;
-@--background-color-notice-subtle--dark: #0c281a;
-
+// customize
+// @--background-color-wikitable-heading: #eaecf0;
+// @--background-color-wikitable-heading--dark: #25292b;
 
 /* colors */
 @--color-thumb: #85adb9;
@@ -42,15 +47,12 @@
 /* 설명 : secondary (옅음), tertiary (더 옅음) */
 /* new colors */
 @--color-text-base: #000000;
-@--color-text-base--dark: rgb(221, 221, 221);
+@--color-text-base--dark: #dddddd;
 @--color-text-secondary: #202122;
 @--color-text-secondary--dark: #a0a0a0;
 @--color-text-tertiary: #c9c9c9;
-@--color-text-tertiary--dark: rgb(71, 71, 71);
+@--color-text-tertiary--dark: #474747;
 
-/* wikitable */
-@--color-bg-wikitable-heading: #eaecf0;
-@--color-bg-wikitable-heading--dark: rgb(37, 41, 43);
 /* bg */
 // @--color-bg-base: #ffffff;
 // @--color-bg-base--dark: #202124;
@@ -76,7 +78,7 @@
 
 /* links */
 @--color-link-base: #0645ad;
-@--color-link-base--dark: rgb(138, 180, 248);
+@--color-link-base--dark: #8ab4f8;
 @--color-link-base--active: #0645ad;
 @--color-link-base--active--dark: rgb(138, 180, 248);
 @--color-link-base--visited: #0b0080;
@@ -91,7 +93,7 @@
 // @background-color-base: var(--background-color-base);
 // @background-color-article: var(--background-color-article);
 // @background-color-thumb: var(--background-color-thumb);
-@color-thumb: var(--color-thumb);
+// @color-thumb: var(--color-thumb);
 @color-gray: var(--color-gray);
 @color-gray-2: var(--color-gray-2);
 // @color-link: var(--color-link);
@@ -101,19 +103,19 @@
 /* new colors */
 @color-text-base: var(--color-text-base);
 @color-text-secondary: var(--color-text-secondary);
-@color-text-tertiary: var(--color-text-tertiary);
-@color-bg-wikitable-heading: var(--color-bg-wikitable-heading);
+// @color-text-tertiary: var(--color-text-tertiary);
+// @color-bg-wikitable-heading: var(--color-bg-wikitable-heading);
 // @color-bg-base: var(--color-bg-base);
 @color-bg-secondary: var(--color-bg-secondary);
 @color-bg-tertiary: var(--color-bg-tertiary);
-@color-border-base: var(--color-border-base);
-@color-border-secondary: var(--color-border-secondary);
-@color-border-tertiary: var(--color-border-tertiary);
-@color-link-base: var(--color-link-base);
-@color-link-base--active: var(--color-link-base--active);
-@color-link-base--visited: var(--color-link-base--visited);
-@color-link-new: var(--color-link-new);
-@color-link-new--visited: var(--color-link-new--visited);
+// @color-border-base: var(--color-border-base);
+// @color-border-secondary: var(--color-border-secondary);
+// @color-border-tertiary: var(--color-border-tertiary);
+// @color-link-base: var(--color-link-base);
+// @color-link-base--active: var(--color-link-base--active);
+// @color-link-base--visited: var(--color-link-base--visited);
+// @color-link-new: var(--color-link-new);
+// @color-link-new--visited: var(--color-link-new--visited);
 
 
 /* etc */
@@ -240,7 +242,7 @@
 :root {
     --background-color-base : @--background-color-base;
     // --background-color-base-fixed
-    // --background-color-neutral
+    --background-color-neutral: @--background-color-neutral;
     // --background-color-neutral-subtle
     --background-color-interactive: @--background-color-interactive;
     // --background-color-interactive--hover
@@ -268,11 +270,12 @@
     --background-color-warning-subtle: @--background-color-interactive-subtle; // message and warning
     // --background-color-success
     // --background-color-notice
+    // others
     --background-color-article : @--background-color-article;
     --background-color-thumb : @--background-color-thumb;
 
     // customization
-    --color-bg-wikitable-heading: @--color-bg-wikitable-heading;
+    // --background-color-wikitable-heading: @--background-color-wikitable-heading;
     // --color-bg-base: @--color-bg-base;
     --color-bg-secondary: @--color-bg-secondary;
     --color-bg-tertiary: @--color-bg-tertiary;
@@ -288,15 +291,17 @@
 }
 :root[data-theme='dark'] {
     --background-color-base : @--background-color-base--dark;
+    --background-color-neutral: @--background-color-neutral--dark;
     --background-color-interactive: @--background-color-interactive--dark;
     --background-color-interactive-subtle: @--background-color-interactive-subtle--dark;
     --background-color-warning: @--background-color-warning--dark;
     --background-color-warning-subtle: @--background-color-warning-subtle--dark;
+    // others
     --background-color-article : @--background-color-article--dark;
     --background-color-thumb : @--background-color-thumb--dark;
 
     // customization
-    --color-bg-wikitable-heading: @--color-bg-wikitable-heading--dark;
+    // --background-color-wikitable-heading: @--background-color-wikitable-heading--dark;
     // --color-bg-base: @--color-bg-base--dark;
     --color-bg-secondary: @--color-bg-secondary--dark;
     --color-bg-tertiary: @--color-bg-tertiary--dark;
