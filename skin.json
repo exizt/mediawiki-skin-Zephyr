@@ -27,8 +27,6 @@
 						"tagline"
 					],
 					"styles": [
-						"mediawiki.ui.icon",
-						"mediawiki.ui.button",
 						"skins.zephyr.styles"
 					],
 					"scripts": [
