@@ -1,6 +1,6 @@
 <?php
 # namespace MediaWiki\Skins\Zephyr;
-use MediaWiki\MediaWikiServices;
+# use MediaWiki\MediaWikiServices;
 
 // use SkinMustache;
 
