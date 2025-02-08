@@ -67,29 +67,29 @@
     }
 }
 
-/* 특수문서 '파일:'에서는 toc-sticky 사용 안 함 */
+// 특수문서 '파일:'에서는 toc-sticky 사용 안 함
 body.ns-6 #toc-sticky {
     display: none
 }
 
 #mw-content-text #toc {
-    /* 본문에 나타나는 TOC */
-    font-size: @font-size-small; /* 기본으로 95% 로 되어있는 거 fix */
+    // 본문에 나타나는 TOC
+    font-size: @font-size-small; // 기본으로 95% 로 되어있는 거 fix
     border-color: var(--color-border-toc-inner);
     background-color: var(--color-bg-toc-inner);
     color: inherit;
 
-    /* '목차' 글자 */
+    // '목차' 글자
     h2#mw-toc-heading {
         font-size: 1em;
     }
 
-    /* 번호 텍스트 */
+    // 번호 텍스트
     .tocnumber {
         color: @color-text-base;
     }
 
-    /* 링크 및 '숨기기'(.toctogglelabel) 텍스트 */
+    // 링크 및 '숨기기'(.toctogglelabel) 텍스트
     .toctogglelabel, a {
         color: @color-link-base;
     }

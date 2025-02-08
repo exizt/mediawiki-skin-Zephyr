@@ -6,7 +6,7 @@
 /* *** 기본 기능 인터페이스에 대한 보정 *** */
 /* 특수 문서, 편집 화면 등 */
 body.ns-special, body.action-edit {
-    /* input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지. */
+    // input의 글자 크기 14px -> 16px로 조정. 모바일 확대 방지.
     .oo-ui-textInputWidget .oo-ui-inputWidget-input {
         font-size: @font-size-medium;
         padding-top: 4px;
@@ -22,18 +22,19 @@ body.skin-zephyr.ns-special {
         line-height: 1.6;
     }
 
-    /* '특수:특수문서' 소제목 상단 여백 */
+    // '특수:특수문서' 문서
     &.mw-special-Specialpages {
+        // '특수:특수문서' 소제목 상단 여백
         .mw-body-content > h2 {
             margin-top: 1em;
         }
     }
 
-    /* '특수:올리기' 문서 */
+    // '특수:올리기' 문서
     &.mw-special-Upload {
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
             .mw-body-content .mw-htmlform {
-                /* 파일 업로드 화면에 600px 이하에서 깨지므로 보정 */
+                // 파일 업로드 화면에 600px 이하에서 깨지므로 보정
                 .mw-input input[name='wpDestFile'] {
                     width: 100%;
                     box-sizing: border-box;
@@ -49,16 +50,16 @@ body.skin-zephyr.ns-special {
         }
     }
 
-    /* '특수:버전' 문서 */
+    // '특수:버전' 문서
     &.mw-special-Version {
-        /* '특수:버전'의 소제목 상단 여백 */
+        // '특수:버전'의 소제목 상단 여백
         .mw-body-content > h2 {
             margin-top: 1em;
         }
 
         @media ( min-width: @width-breakpoint-tablet ) {
-            /* wide 폭일 때 - 예시 - 720px 이상 */
-            /* '특수:버전'문서의 표의 '저자'의 폭 줄임. */
+            // wide 폭일 때 - 예시 - 720px 이상
+            // '특수:버전'문서의 표의 '저자'의 폭 줄임.
             .mw-version-ext-authors {
                 min-width: 10em;
                 max-width: 15em;
@@ -66,8 +67,8 @@ body.skin-zephyr.ns-special {
         }
 
         @media ( max-width: calc(@width-breakpoint-tablet - 1px) ) {
-            /* middle 폭일 때 - 예시 - 720px 이하 */
-            /* '특수:버전' 문서에서 테이블의 responsive fix */
+            // middle 폭일 때 - 예시 - 720px 이하
+            // '특수:버전' 문서에서 테이블의 responsive fix
             table.wikitable {
                 display: block;
                 overflow-x: auto;
@@ -95,10 +96,10 @@ body.skin-zephyr.ns-special {
         }
     }
 
-    /* '특수:환경설정' 문서 */
+    // '특수:환경설정' 문서
     &.mw-special-Preferences {
         #preferences {
-            margin-bottom: 5rem; /* 하단 여백 bug fix */
+            margin-bottom: 5rem; // 하단 여백 bug fix
         }
     }
 }
@@ -126,10 +127,10 @@ body.skin-zephyr.ns-special {
     }
 
     .editOptions {
-        /* 편집 화면의 하단, 요약, 사소한 편집 등이 나타나는 영역 */
+        // 편집 화면의 하단, 요약, 사소한 편집 등이 나타나는 영역
         font-size: @font-size-small;
 
-        /* 색상 */
+        // 색상
         background-color: @color-bg-secondary;
         color: inherit;
 
@@ -139,7 +140,7 @@ body.skin-zephyr.ns-special {
         }
     }
     .wikiEditor-ui-toolbar {
-        /* 에디터의 툴바 부분 */
+        // 에디터의 툴바 부분
         font-size: @font-size-small;
     }
     .mw-editTools {
@@ -152,15 +153,7 @@ body.skin-zephyr.ns-special {
 /* 폭 280px를 최소의 마지노선으로 보고 있음. */
 /* 매우 작은 사이즈에 대해 특수하게 fix하는 부분 */
 @media screen and (max-width: 300px) {
-    /* 이제는 안 쓰는 듯함 */
-    /* 290으로 되어있는 것을 변경함 */
-    /*
-    .mw-ui-vform {
-        width: inherit;
-    }
-    */
-
-    /* '최근 목록', '주시목록 최근 바뀜', '가리키는 글의 최근 바뀜' 등에서 화살표가 나타날 수 있는 공간. 15px 정도인데, 공간 아끼려고.. */
+    // '최근 목록', '주시목록 최근 바뀜', '가리키는 글의 최근 바뀜' 등에서 화살표가 나타날 수 있는 공간. 15px 정도인데, 공간 아끼려고..
     .mw-enhancedchanges-arrow-space {
         width: 0; /* 15px인데, 아끼려고.. */
     }
@@ -181,7 +174,7 @@ body.ns-special.mw-special-Recentchangeslinked {
 /* *** 색상 등과 관련되어서 *** */
 body.skin-zephyr {
     .mw-body {
-        /* pre 태그 */
+        // pre 태그
         pre {
             background-color: @color-bg-tertiary;
             color: inherit;
@@ -189,7 +182,7 @@ body.skin-zephyr {
             border-radius: 0.5em;
         }
 
-        /* '로그인'에서 버튼, 최근 바뀜의 이름공간/태그필터 등의 select, input */
+        // '로그인'에서 버튼, 최근 바뀜의 이름공간/태그필터 등의 select, input
         .mw-input {
             select, input {
                 border-radius: 2px;
@@ -201,7 +194,7 @@ body.skin-zephyr {
                 font-size: 1rem;
             }
         }
-        /* '추적용 분류'에서 테이블 */
+        // '추적용 분류'에서 테이블
         .mw-datatable {
             td {
                background-color: inherit;
@@ -216,12 +209,12 @@ body.skin-zephyr {
 /* dark 모드에서만 보정해도 될 경우 */
 :root[data-theme='dark'] {
     body.skin-zephyr {
-        /* '특수:검색'문서에서 탭 부분 */
+        // '특수:검색'문서에서 탭 부분
         .mw-search-profile-tabs {
             background-color: @color-bg-tertiary;
         }
 
-        /* '특수:검색'문서에서 고급 탭의 옵션 */
+        // '특수:검색'문서에서 고급 탭의 옵션
         #mw-searchoptions {
             background-color: @color-bg-tertiary;
         }
@@ -230,9 +223,8 @@ body.skin-zephyr {
             color: @color-link-base;
         }
 
-        /* 상단 검색창에서 입력시 나타나는 연관 문서 목록 */
+        // 상단 검색창에서 입력시 나타나는 연관 문서 목록
         .suggestions {
-            /*  */
             .suggestions-results {
                 background-color: @color-bg-base;
                 color: @color-text-base;
@@ -240,7 +232,7 @@ body.skin-zephyr {
             a.mw-searchSuggest-link, a.mw-searchSuggest-link:hover, a.mw-searchSuggest-link:active, a.mw-searchSuggest-link:focus {
                 color: @color-text-base;
             }
-            /* '다음 어구를 포함하는 문서 검색' */
+            // '다음 어구를 포함하는 문서 검색'
             .suggestions-special {
                 background-color: @color-bg-base;
                 color: @color-text-base;
@@ -249,11 +241,11 @@ body.skin-zephyr {
                     color: @color-text-base;
                 }
             }
-            /* 목록 중 각 하나 */
+            // 목록 중 각 하나
             .suggestions-result {
                 color: @color-text-base;
             }
-            /* 목록 중 커서가 닿았을 때 */
+            // 목록 중 커서가 닿았을 때
             .suggestions-result-current {
                 background-color: #223c71;
             }
@@ -265,7 +257,7 @@ body.skin-zephyr {
         }
         */
 
-        /* '특수:검색'문서에서 검색어에서 하단에 나타나는 연관 문서 목록 */
+        // '특수:검색'문서에서 검색어에서 하단에 나타나는 연관 문서 목록
         .oo-ui-menuSelectWidget {
             background-color: @color-bg-base;
             &.oo-ui-optionWidget-highlighted {
@@ -273,7 +265,7 @@ body.skin-zephyr {
             }
         }
 
-        /* oo-ui에서 select/input 밑에 나오는 목록 */
+        // oo-ui에서 select/input 밑에 나오는 목록
         .oo-ui-menuSelectWidget, .oo-ui-menuOptionWidget {
             &.oo-ui-optionWidget {
                 background-color: @color-bg-base;
@@ -284,7 +276,7 @@ body.skin-zephyr {
             }
         }
 
-        /* oo-ui에서 select의 ui를 대체하는 요소 */
+        // oo-ui에서 select의 ui를 대체하는 요소
         .oo-ui-dropdownWidget, .oo-ui-dropdownInputWidget {
             &.oo-ui-widget-enabled {
                 .oo-ui-dropdownWidget-handle {
@@ -322,17 +314,17 @@ body.skin-zephyr {
             color: @color-text-base;
         }
 
-        /* '특수:활동적인사용자'문서의 사용자 표시 input 등 */
+        // '특수:활동적인사용자'문서의 사용자 표시 input 등
         .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled {
             background-color: inherit;
         }
 
-        /* 최근 바뀜 - 화면 우측의 '범례' 박스 */
+        // 최근 바뀜 - 화면 우측의 '범례' 박스
         .mw-changeslist-legend {
             background-color: var(--color-bg-base);
         }
 
-        /* 최근 바뀜 - 이름공간, 태그필터 등의 select, input 색상 */
+        // 최근 바뀜 - 이름공간, 태그필터 등의 select, input 색상
         .mw-input {
             select, input {
                 background-color: var(--color-bg-base);
@@ -340,24 +332,19 @@ body.skin-zephyr {
             }
         }
 
-        /* 파일 상세 페이지의 헤더 탭 */
+        // 파일 상세 페이지의 헤더 탭
         #filetoc {
             background-color: @color-bg-tertiary;
         }
 
-        /* 파일 상세 페이지의 '미디어 뷰어에서 열기' 버튼 */
-        .mw-ui-button {
-            background-color: @color-bg-tertiary;
-            color: @color-text-base;
-        }
-        /* '계정 만들기'에서 우측의 텍스트 */
+        // '계정 만들기'에서 우측의 텍스트
         .mw-number-text {
             color: inherit;
             h3 {
                 color: @color-text-secondary;
             }
         }
-        /* '새 파일 목록'문서에서 날짜를 선택하는 요소 */
+        // '새 파일 목록'문서에서 날짜를 선택하는 요소
         .mw-widget-dateInputWidget-handle {
             background-color: @color-bg-secondary;
         }
@@ -382,13 +369,13 @@ body.skin-zephyr {
         &.ns-special {
             .mw-body-content {
                 table {
-                    /* '문자열 찾아 바꾸기'문서의 입력 textarea */
+                    // '문자열 찾아 바꾸기'문서의 입력 textarea
                     textarea {
                         background-color: @color-bg-base;
                         color: @color-text-base;
                     }
 
-                    /* '문자 역사 합치기' */
+                    // '문자 역사 합치기'
                     input#target, input#dest {
                         background-color: @color-bg-base;
                         color: @color-text-base;
@@ -396,7 +383,7 @@ body.skin-zephyr {
                     }
                 }
 
-                /* '문자열 찾아 바꾸기'문서의 옵션 */
+                // '문자열 찾아 바꾸기'문서의 옵션
                 .ext-replacetext-searchoptions {
                     background-color: @color-bg-secondary;
                     color: @color-text-secondary;
@@ -404,13 +391,13 @@ body.skin-zephyr {
             }
 
             &.mw-special-ApiSandbox {
-                /* 'API 실험실' */
+                // 'API 실험실'
                 .mw-apisandbox-toolbar {
                     background-color: @color-bg-secondary;
                     color: @color-text-secondary;
                 }
             }
-            /* 'API 실험실' */
+            // 'API 실험실'
             .oo-ui-outlineOptionWidget {
                 background-color: @color-bg-secondary;
                 color: @color-link-base;
@@ -418,7 +405,7 @@ body.skin-zephyr {
                     background-color: @color-bg-tertiary;
                 }
             }
-            /* 환경 설정 - 하단 버튼 영역 */
+            // 환경 설정 - 하단 버튼 영역
             #preferences .mw-htmlform-submit-buttons {
                 background-color: @color-bg-base;
                 color: @color-link-base;
@@ -436,25 +423,25 @@ body.skin-zephyr {
             background-color: @color-bg-tertiary;
         }
 
-        /* math 확장 기능 연관 */
+        // math 확장 기능 연관
         .mwe-math-fallback-image-inline,
         .mwe-math-fallback-image-display {
             filter: hue-rotate(180deg) invert(1);
         }
 
-        /* page history */
+        // page history
         #pagehistory li.selected {
             background-color: @color-bg-tertiary;
             color: inherit;
             outline: 1px dashed #a2a9b1;
         }
 
-        /* redirect arrow */
+        // redirect arrow
         .mw-content-ltr .redirectText li {
             filter: hue-rotate(180deg) invert(1);
         }
 
-        /* 삭제하려는 문서가.. 알림 블럭 */
+        // '삭제하려는 문서가..' 알림 블럭
         .mw-message-box-warning {
             background-color: @color-bg-tertiary;
             border-color: @color-link-base;
@@ -462,7 +449,7 @@ body.skin-zephyr {
         .mw-message-box {
             color: @color-link-base;
         }
-        /* 위키에디터에서 링크 넣기 등의 도구 */
+        // 위키에디터에서 링크 넣기 등의 도구
         .ui-widget-content {
             /*border-color: */
             background: @color-bg-tertiary;
@@ -479,7 +466,7 @@ body.skin-zephyr {
         .ui-widget-overlay {
             background: @color-bg-secondary;
         }
-        /* 텍스트 비교 */
+        // 텍스트 비교
         .diff-addedline {
             border-color: #6d8ba7; /* #a3d3ff */
             .diffchange {
@@ -506,7 +493,7 @@ body.skin-zephyr {
 
 /* wikitable */
 body.skin-zephyr .mw-body {
-    /* wikitable: 본문 내의 표 */
+    // wikitable: 본문 내의 표
     .wikitable {
         background-color: inherit;
         color: inherit;
@@ -523,7 +510,7 @@ body.skin-zephyr .mw-body {
         }
     }
 
-    /* catlinks: 본문/분류 하단의 분류 영역 */
+    // catlinks: 본문/분류 하단의 분류 영역
     .catlinks {
         /*background-color: @color-bg-tertiary;*/
         background-color: inherit;
